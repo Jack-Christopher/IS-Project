@@ -52,7 +52,9 @@ _colocar texto_
 
 
 ## Conceptos DDD aplicados ⚙️
-_colocar texto_
+*Poner el foco primario del proyecto en el núcleo y la lógica del dominio.
+*Basar los diseños complejos en un modelo.
+*Iniciar una creativa colaboración entre técnicos y expertos del dominio para interactuar lo más cercano posible a los conceptos fundamentales del problema.
 
 ---
 
