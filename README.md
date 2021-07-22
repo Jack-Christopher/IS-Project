@@ -44,7 +44,11 @@ Guiones bajos: Guiones bajos entre palabras, tales como: mysql_real_escape_strin
 _colocar texto_
 
 ## Principios SOLID aplicados ⚙️
-_colocar texto_
+- [ ] _S – Single Responsibility Principle (SRP)_
+- [ ] _O – Open/Closed Principle (OCP)_
+- [ ] _L – Liskov Substitution Principle (LSP)_
+- [ ] _I – Interface Segregation Principle (ISP)_
+- [ ] _D – Dependency Inversion Principle (DIP)_
 
 
 ## Conceptos DDD aplicados ⚙️
