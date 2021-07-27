@@ -15,7 +15,7 @@ CREATE TABLE Invitado (
     id INT PRIMARY KEY,
     nombre VARCHAR(30),
     correo_electronico VARCHAR(30),
-    telefono VARCHAR(9)
+    telefono VARCHAR(9),
     grado VARCHAR(20)
 );
     
@@ -33,7 +33,7 @@ CREATE TABLE Autor (
     id INT PRIMARY KEY,
     nombre VARCHAR(30),
     correo_electronico VARCHAR(30),
-    telefono VARCHAR(9)
+    telefono VARCHAR(9),
     nacionalidad VARCHAR(20)
 );
 
@@ -74,7 +74,7 @@ CREATE TABLE Evento_Organizador(
 	id_evento INT,
     id_organizador INT,
     PRIMARY KEY(id_evento,id_organizador),
-    FOREIGN KEY (id_evento) REFERENCES Evento(id)
+    FOREIGN KEY (id_evento) REFERENCES Evento(id),
     FOREIGN KEY (id_organizador) REFERENCES Organizador(id)
 );
     
@@ -115,5 +115,5 @@ CREATE TABLE Autor_Documento(
     id_documento INT,
     PRIMARY KEY(id_autor,id_documento),
     FOREIGN KEY (id_autor) REFERENCES Autor(id),
-    FOREIGN KEY (id_documento) REFERENCES Documento(id);
+    FOREIGN KEY (id_documento) REFERENCES Documento(id)
 );
