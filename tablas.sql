@@ -1,11 +1,13 @@
-DROP DATABASE IF EXISTS main;
-CREATE DATABASE main;
-USE main;
+DROP DATABASE IF EXISTS mainDB;
+CREATE DATABASE mainDB;
+USE mainDB;
 
 CREATE TABLE Organizador (
     id INT PRIMARY KEY,
     nombre VARCHAR(30),
     correo_electronico VARCHAR(30),
+    nombre_de_usuario VARCHAR(20), 
+    clave VARCHAR(30),
     telefono VARCHAR(9)
 );
 
@@ -21,9 +23,10 @@ CREATE TABLE Usuario (
     id INT PRIMARY KEY,
     nombre VARCHAR(30),
     correo_electronico VARCHAR(30),
+    nombre_de_usuario VARCHAR(20), 
+    clave VARCHAR(30),
     telefono VARCHAR(9),
-    cuenta VARCHAR(20),
-    cantidad_evento INT);
+    cantidad_evento INT
 );
    
 CREATE TABLE Autor (
@@ -44,6 +47,7 @@ CREATE TABLE Evento(
     id_categoria INT,
     descripcion VARCHAR (50),
     pais VARCHAR(20),
+    cantidad_asistentes INT,
     FOREIGN KEY (id_categoria) REFERENCES Categoria(id)
 );
 
