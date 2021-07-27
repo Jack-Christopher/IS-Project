@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title> Bienvenido a Organizador de Horario </title>
+    <title> Iniciar sesión </title>
     <link rel="stylesheet" href="../CSS_Files/login.css">
 
     <?php   include_once("include_important.php");  ?>
