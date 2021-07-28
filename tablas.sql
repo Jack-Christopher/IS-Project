@@ -1,4 +1,3 @@
-describe DATA;
 DROP DATABASE IF EXISTS mainDB;
 CREATE DATABASE mainDB;
 USE mainDB;
