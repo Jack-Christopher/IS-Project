@@ -48,6 +48,7 @@ CREATE TABLE Categoria(
 
 CREATE TABLE Evento(
     id INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(30),
     id_categoria INT,
     descripcion VARCHAR (50),
     pais VARCHAR(20),
