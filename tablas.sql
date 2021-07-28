@@ -4,7 +4,8 @@ USE mainDB;
 
 CREATE TABLE Organizador (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    nombre VARCHAR(30),
+    nombres VARCHAR(25),
+    apellidos VARCHAR(30),
     correo_electronico VARCHAR(30),
     nombre_de_usuario VARCHAR(20), 
     clave VARCHAR(30),
@@ -13,7 +14,8 @@ CREATE TABLE Organizador (
 
 CREATE TABLE Invitado (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    nombre VARCHAR(30),
+    nombres VARCHAR(25),
+    apellidos VARCHAR(30),
     correo_electronico VARCHAR(30),
     telefono VARCHAR(9),
     grado VARCHAR(20)
@@ -21,7 +23,8 @@ CREATE TABLE Invitado (
     
 CREATE TABLE Usuario (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    nombre VARCHAR(30),
+    nombres VARCHAR(25),
+    apellidos VARCHAR(30),
     correo_electronico VARCHAR(30),
     nombre_de_usuario VARCHAR(20), 
     clave VARCHAR(30),
@@ -31,7 +34,8 @@ CREATE TABLE Usuario (
    
 CREATE TABLE Autor (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    nombre VARCHAR(30),
+    nombres VARCHAR(25),
+    apellidos VARCHAR(30),
     correo_electronico VARCHAR(30),
     telefono VARCHAR(9),
     nacionalidad VARCHAR(20)
