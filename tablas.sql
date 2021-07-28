@@ -1,9 +1,10 @@
+describe DATA;
 DROP DATABASE IF EXISTS mainDB;
 CREATE DATABASE mainDB;
 USE mainDB;
 
 CREATE TABLE Organizador (
-    id INT PRIMARY KEY,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     nombre VARCHAR(30),
     correo_electronico VARCHAR(30),
     nombre_de_usuario VARCHAR(20), 
@@ -12,7 +13,7 @@ CREATE TABLE Organizador (
 );
 
 CREATE TABLE Invitado (
-    id INT PRIMARY KEY,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     nombre VARCHAR(30),
     correo_electronico VARCHAR(30),
     telefono VARCHAR(9),
@@ -20,7 +21,7 @@ CREATE TABLE Invitado (
 );
     
 CREATE TABLE Usuario (
-    id INT PRIMARY KEY,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     nombre VARCHAR(30),
     correo_electronico VARCHAR(30),
     nombre_de_usuario VARCHAR(20), 
@@ -30,7 +31,7 @@ CREATE TABLE Usuario (
 );
    
 CREATE TABLE Autor (
-    id INT PRIMARY KEY,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     nombre VARCHAR(30),
     correo_electronico VARCHAR(30),
     telefono VARCHAR(9),
@@ -38,12 +39,12 @@ CREATE TABLE Autor (
 );
 
 CREATE TABLE Categoria(
-    id INT PRIMARY KEY,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     nombre VARCHAR(8)
 );
 
 CREATE TABLE Evento(
-    id INT PRIMARY KEY,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     id_categoria INT,
     descripcion VARCHAR (50),
     pais VARCHAR(20),
@@ -52,7 +53,7 @@ CREATE TABLE Evento(
 );
 
 CREATE TABLE Sesion(
-	id INT PRIMARY KEY,
+	id INT PRIMARY KEY AUTO_INCREMENT,
 	hora TIME,
     fecha DATE,
     informacionExtra VARCHAR(30),
@@ -61,7 +62,7 @@ CREATE TABLE Sesion(
 );
 
 CREATE TABLE Documento(
-	id INT PRIMARY KEY,
+	id INT PRIMARY KEY AUTO_INCREMENT,
     titulo VARCHAR(30),
     archivo BLOB, 
     cantidad_descargas INT
