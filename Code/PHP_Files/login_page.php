@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title> Iniciar sesión </title>
+    <title> Bienvenido a Organizador de Horario </title>
     <link rel="stylesheet" href="../CSS_Files/login.css">
 
     <?php   include_once("include_important.php");  ?>
@@ -31,7 +31,7 @@
         </div>
     </form>
     <br>  ¿No tienes una cuenta? 
-        <a href="../PHP Files/register_page.php"> Regístrate </a>
+        <a href="register_page.php"> Regístrate </a>
     </div>
     <br>
 </body>
@@ -70,7 +70,7 @@
                 $.ajax(
                 {
                     type: 'POST',
-                    url: "../PHP_Files/login.php",
+                    url: "login.php",
                     data: cadena,
                     success: function(data) 
                     {
@@ -80,7 +80,7 @@
 
                             window.setTimeout(function()
                             {
-                                window.location="../PHP_Files/something.php";
+                                window.location="main_view.php";
                             } , 2000);
                             
 							

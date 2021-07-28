@@ -128,7 +128,7 @@
 
                             window.setTimeout(function()
                             {
-                                window.location="something.php";
+                                window.location="main_view.php";
                             } , 6000);
                             
                         }
