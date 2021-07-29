@@ -101,46 +101,66 @@
         return true;
     }
 
+    /// 
+    /// Funcion para escribir error sobre un mensaje 
+    ///
+    function ErrorMessage($message)
+    {
+        $message = "Redirigiendo a la página principal ..."
+    }
+
+    /// 
+    /// Funcion para setear un window. 
+    ///
+
+    function setLocation($window,$new_location)
+    {
+        window.location=$newl;
+    }
+    /// 
+    /// Funcion principal del register
+    ///
+    function register_main($condition)
+    {
+        if($condition==true)
+        {
+            cadena = $("#signup_form").serialize();
+
+            $.ajax(
+            {
+                type: 'POST',
+                url: "register.php",
+                data: cadena,
+                success: function(data) 
+                {
+                    if(data==0)
+                    {
+                        /*alertify.set('notifier','position', 'top-center');*/
+                        message = alertify.success("El registro se realizó exitosamente");
+                        
+                        
+                        window.setTimeout(ErrorMessage(message) , 3000);
+                        
+                        window.setTimeout(setLocation(window,"main_view.php") , 6000);
+                        
+                    }
+                    else 
+                    {
+                        alertify.error("No se pudo registrar sus usuario.")
+                    }
+                }
+
+             })
+        }
+    }
+    
+    ///
+    /// Composicion de funciones, o pipeline de funciones.
+    ///
     $(document).ready( function() 
     { 
-        $("#submit_button").click( function() 
-        {
-            if(formEsValido())
-            {
-                cadena = $("#signup_form").serialize();
-
-                $.ajax(
-                {
-                    type: 'POST',
-                    url: "register.php",
-                    data: cadena,
-                    success: function(data) 
-                    {
-                        if(data==0)
-                        {
-                            /*alertify.set('notifier','position', 'top-center');*/
-                            message = alertify.success("El registro se realizó exitosamente");
-                            
-                            window.setTimeout(function()
-                            {
-                                message = alertify.success("Redirigiendo a la página principal ...");
-                            } , 3000);
-
-                            window.setTimeout(function()
-                            {
-                                window.location="main_view.php";
-                            } , 6000);
-                            
-                        }
-                        else 
-						{
-							alertify.error("No se pudo registrar sus usuario.")
-						}
-                    }
-                    
-                })
-            }
-            
-        })
+        $("#submit_button").click(function() {register_main(formEsValido())})
     })
+
+
 </script>
