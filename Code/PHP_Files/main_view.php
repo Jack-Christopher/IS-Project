@@ -39,7 +39,7 @@
         $conn = OpenConnection();
         $id = $_SESSION["id"];
         $query = "SELECT DISTINCT ev.id \"id_evento\" , ev.nombre \"nombre_evento\"
-                  FROM sesion S, sesion_usuario SU, Evento ev 
+                  FROM sesion S, sesion_usuario SU, evento ev 
                   WHERE (id_usuario = $id AND S.id = SU.id_sesion) AND ev.id = S.id_evento";
 
 
@@ -58,29 +58,37 @@
         <tbody>
 
             <?php
+            function check_con_result ($registro, $result)
+            {
                 while ($registro = mysqli_fetch_array($result))
                 {
-                    echo "<tr>";
                     
-                        echo "<th scope=\"row\"> ";
-                            echo $registro["id_evento"];
-                        echo "</th>";
-
-                        echo "<td>";
-                            echo $registro["nombre_evento"];
-                        echo "</td>";
-
-                        echo "<td>";
-
-                            echo "<button type=\"button\" id=\"view_button\" 
-                            onclick= \"show_event(" . $registro["id_evento"] . ")\" 
-                            class=\"btn btn-primary\" > Ver  </button>";
-                        echo "</td>";
-
-                    echo "</tr>";
+                    return show_event_0($registro);
                 }
+            }
 
-            ?>
+            function show_event_0($registro)
+            {
+                echo "<tr>";
+            
+                echo "<th scope=\"row\"> ";
+                    echo $registro["id_evento"];
+                echo "</th>";
+            
+                echo "<td>";
+                    echo $registro["nombre_evento"];
+                echo "</td>";
+            
+                echo "<td>";
+            
+                    echo "<button type=\"button\" id=\"view_button\" 
+                    onclick= \"show_event(" . $registro["id_evento"] . ")\" 
+                    class=\"btn btn-primary\" > Ver  </button>";
+                echo "</td>";
+            
+                echo "</tr>";
+            }
+        ?>
 
         </tbody>
     </table>
@@ -120,8 +128,17 @@
         <tbody>
 
             <?php
-                while ($registro1 = mysqli_fetch_array($result1))
+            function check_con_result1 ($registro1, $result1)
+            {
+            while ($registro1 = mysqli_fetch_array($result1))
                 {
+                    return show_event_1($registro1);
+                }
+            }
+                 
+                
+            function show_event_1($registro1)
+            {
                     echo "<tr>";
                     
                         echo "<th scope=\"row\"> ";
@@ -172,6 +189,7 @@ function show_event(numero)
     alert("Hola mundo " + numero);
 
     window.location="event_view.php?id=" + numero ;
+
 }
 
 
