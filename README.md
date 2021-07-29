@@ -45,6 +45,8 @@ _Estilo #5 constraints.- main_view.php Las funciones toman un parametro adiciona
 * _Este es llamado al final_
 * _Al retornar el valor entra en la siguiente funcion_
 
+#Constructivist: Este es un estilo de programación que hace que existan subfunciones con los parámetros de una función controladora, si alguna de las subfunciones falla, las demás fallan también. Este estilo es aplicado a la función formEsValido(), en el archivo login_page.php. Esta función, en Java Script, divide su trabajo en subfunciones, con los parámetros nombre_de_usuario y clave_de_usuario independientemente para verificar si son vacíos y enviarle un mensaje al usuario para que ingrese su nombre de usuario y contraseña. De esta forma el código para la función formEsValido() es mucho más entendible.
+
 ## Principios SOLID aplicados ⚙️
 - [ ] _S – Single Responsibility Principle (SRP)_
 - [ ] _O – Open/Closed Principle (OCP)_
