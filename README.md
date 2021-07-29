@@ -41,7 +41,9 @@ Guiones bajos: Guiones bajos entre palabras, tales como: mysql_real_escape_strin
 **resaltar**
 
 ## Estilos de Programación aplicados ⚙️
-_colocar texto_
+_Estilo #5 constraints.- main_view.php Las funciones toman un parametro adicional, f_
+* _Este es llamado al final_
+* _Al retornar el valor entra en la siguiente funcion_
 
 ## Principios SOLID aplicados ⚙️
 - [ ] _S – Single Responsibility Principle (SRP)_
