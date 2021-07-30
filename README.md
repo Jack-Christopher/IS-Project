@@ -53,12 +53,13 @@ Guiones bajos: Guiones bajos entre palabras, tales como: mysql_real_escape_strin
 
 - [ ] REGISTER:
 
+→ Pipeline: Este es un estilo de programacion dentro de registro, que crea un procedimiento hasta un resultado final, en el caso de registro requiere de una comprobacion del form  para la realizacion del procedimiento, por lo que pipeline permite la composicion de las funciones, comprobar informacion y realizar cambio. Por lo que podemos usar el pipeline para el funcionamiento de un registro.
+
 
 - [ ] MAIN VIEW:
 
 
-
- - [ ] _kick forward Variación del estilo de la fábrica de dulces, con las siguientes limitaciones adicionales:(main_view.php)_
+→ Kick forward: Variación del estilo de la fábrica de dulces, con las siguientes limitaciones adicionales:(main_view.php)_
 
 * _Cada función toma un parámetro adicional, generalmente el último, que es otra función_
 * _Ese parámetro de función se aplica al final de la función actual_
@@ -67,9 +68,6 @@ Guiones bajos: Guiones bajos entre palabras, tales como: mysql_real_escape_strin
 * _Esto nos permite optimizar el codigo evitando funciones innecesarias y ademas de la escalabilidad a la hora de usar muchas funciones en el codigo_
 * _Este estilo nos permite optimizar el codigo evitando funciones innecesarias y ademas de la escalabilidad a la hora de usar muchas funciones en el codigo_
 
-
-
-- [ ] _Pipeline: Este es un estilo de programacion dentro de registro, que crea un procedimiento hasta un resultado final, en el caso de registro requiere de una comprobacion del form  para la realizacion del procedimiento, por lo que pipeline permite la composicion de las funciones, comprobar informacion y realizar cambio. Por lo que podemos usar el pipeline para el funcionamiento de un registro.
 
 ## Principios SOLID aplicados ⚙️
 - [ ] _S – Single Responsibility Principle (SRP)_
