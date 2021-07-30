@@ -1,3 +1,4 @@
+<!-- Interfaz de usuario -->
 <html>
 <head>
     <title> Bienvenido a Organizador de Horario </title>
@@ -76,6 +77,8 @@
         return false;
     }
 
+    //Servidor
+    
     function ejecutarInicioSesion()
     {
         cadena = $("#login_form").serialize();
