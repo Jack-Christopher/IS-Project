@@ -49,6 +49,10 @@
 <script>
     function formEsValido()
     {
+        /// 
+        /// Variables usadas en forma de un array para 
+        /// el tratamiendo de los datos del registro
+        /// 
         var nombres = $("#name");
         var apellidos = $("#last_name");
         var correo_electronico = $("#e_mail");
@@ -102,20 +106,26 @@
     }
 
     /// 
-    /// Funcion para escribir error sobre un mensaje 
+    /// Funcion dnetor del cookbook para mostrar un mensaje de redireccionamiento
     ///
-    function ErrorMessage($message)
+    function RedirectMessage()
     {
-        $message = "Redirigiendo a la página principal ..."
+        alertify.success("El registro se realizó exitosamente");
     }
 
     /// 
-    /// Funcion para setear un window. 
+    /// Funcion para redireccionar a una pagina(login). 
     ///
 
     function setLocation($window,$new_location)
     {
-        window.location=$newl;
+        window.location=$new_location;
+    }
+
+    function Redirect()
+    {
+        setTimeout(setLocation, 6000,window,"main_view.php");
+
     }
     /// 
     /// Funcion principal del register
@@ -124,6 +134,9 @@
     {
         if($condition==true)
         {
+            ///
+            /// Uso de arrays  para enviar a la BD mediante AJAX
+            ///
             cadena = $("#signup_form").serialize();
 
             $.ajax(
@@ -134,15 +147,12 @@
                 success: function(data) 
                 {
                     if(data==0)
-                    {
-                        /*alertify.set('notifier','position', 'top-center');*/
-                        message = alertify.success("El registro se realizó exitosamente");
-                        
-                        
-                        window.setTimeout(ErrorMessage(message) , 3000);
-                        
-                        window.setTimeout(setLocation(window,"main_view.php") , 6000);
-                        
+                    {  
+                        ///
+                        /// Uso del Cookbook para el redireccionamiento
+                        ///
+                        RedirectMessage()
+                        Redirect()
                     }
                     else 
                     {
@@ -155,7 +165,8 @@
     }
     
     ///
-    /// Composicion de funciones, o pipeline de funciones.
+    /// Composicion de funciones o pipeline de funciones.
+    /// para el registro de nuevos usuarios
     ///
     $(document).ready( function() 
     { 
