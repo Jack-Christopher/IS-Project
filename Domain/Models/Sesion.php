@@ -17,23 +17,15 @@ class Sesion
         $this->Evento = $result_array["nombre_evento"];
     }
 
-    public function print()
+    public function get_values()
     {
-        echo "<th scope=\"row\"> ";
-        echo $this->id;
-        echo "</th>";
-
-        echo "<td>";
-        echo $this->fecha;
-        echo "</td>";
-
-        echo "<td>";
-        echo $this->hora;
-        echo "</td>";
-
-        echo "<td>";
-        echo $this->Evento;
-        echo "</td>";
+        $values = [
+            "id" => "$this->id",
+            "fecha" => "$this->fecha",
+            "hora" => "$this->hora",
+            "nombre_evento" => "$this->Evento",
+        ];
+        return $values;
     }
 
 }

@@ -112,7 +112,7 @@
                 $.ajax(
                 {
                     type: 'POST',
-                    url: "../../Controller/register.php",
+                    url: "register.php",
                     data: cadena,
                     success: function(data) 
                     {

@@ -7,6 +7,7 @@
       include_once("../Services/include_important.php"); 
       require_once("../../Repositories/Classes/conexion.php");
       include_once("../Models/Evento.php");
+      include_once("../Models/Persona.php");
       $connection = new Conexion;
     ?>
     <script type="text/javascript" src="../Services/admin_view_functions.js"></script>
@@ -33,18 +34,33 @@
     <br>
 
     <div class="container">
-
-    <h1 class="display-4">Bienvenido a tu Inicio</h1>
-    
-    <br><br><br>
-
+        
     <?php
         $conn = $connection->OpenConnection();
         $query = "SELECT nombre, id, descripcion, pais
                   FROM Evento";
+        $query2 = "SELECT id, nombres, apellidos, correo_electronico, telefono FROM";
+        
+        if ($_SESSION["permisos"] == "admin")
+        {
+            $query2 = $query2 . " Organizador";
+        }
+        else
+        {
+            $query2 = $query2 . " Usuario";
+        }
 
         $result1 = mysqli_query($conn, $query);
+        $result2 = mysqli_query($conn, $query2);
+        $temp = mysqli_fetch_array($result2);
+        $administrador = new Persona($temp, "Administrador");
     ?>
+
+    <h1 class="display-4">Bienvenido a tu Inicio, <?php echo $administrador->nombres;?></h1>
+    
+    <br><br><br>
+
+    
 
     
     <div class="container">
@@ -78,12 +94,26 @@
                 while ($registro = mysqli_fetch_array($result1))
                 {
                     echo "<tr>";
-                    $current_sesion = new Evento( $registro);
-                    $current_sesion->print();
+                    $current_event = new Evento( $registro);
+                    $datos = $current_event->get_values();
+                    echo "<th scope=\"row\"> ";
+                    echo $datos['id'];
+                    echo "</th>";
+
                     echo "<td>";
-                    ?>
-                    
-                    <a href="admin_view.php?id=<?php echo $current_sesion->idEvento; ?>" class="btn btn-danger">Eliminar</a>
+                    echo $datos['nombre'];
+                    echo "</td>";
+
+                    echo "<td>";
+                    echo $datos['descripcion'];
+                    echo "</td>";
+
+                    echo "<td>";
+                    echo $datos['pais'];
+                    echo "</td>";
+
+                    echo "<td>";?>
+                    <a href="admin_view.php?id=<?php echo $current_event->idEvento; ?>" class="btn btn-danger">Eliminar</a>
                     <?php
                     echo "</td>"; 
                     echo "</tr>";
@@ -103,6 +133,14 @@
     
     <a href="add_category.php" class="btn btn-info"> Agregar Categoría</a>
     </div>
+    <br><br>
+
+
+    <h4>Información de Contacto:</h4>
+    <br>
+    Correo Electrónico:  <?php echo $administrador->correoElectronico; ?>
+    <br>
+    Teléfono:  <?php echo $administrador->telefono; ?>
     <br><br>
 
     </body>

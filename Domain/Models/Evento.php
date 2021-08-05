@@ -16,23 +16,15 @@ class Evento
         $this->pais = $result_array["pais"];
     }
 
-    public function print()
+    public function get_values()
     {
-        echo "<th scope=\"row\"> ";
-        echo $this->idEvento;
-        echo "</th>";
-
-        echo "<td>";
-        echo $this->nombre;
-        echo "</td>";
-
-        echo "<td>";
-        echo $this->descripcion;
-        echo "</td>";
-
-        echo "<td>";
-        echo $this->pais;
-        echo "</td>";
+        $values = [
+            "id" => "$this->idEvento",
+            "nombre" => "$this->nombre",
+            "descripcion" => "$this->descripcion",
+            "pais" => "$this->pais",
+        ];
+        return $values;
     }
 
 }

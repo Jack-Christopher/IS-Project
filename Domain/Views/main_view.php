@@ -3,10 +3,10 @@
 <html>
   <head>
     <title> Inicio </title>
-    <!-- <link rel="stylesheet" href="../CSS Files/main_view.css"> -->
     <?php
       include_once("../Services/include_important.php"); 
       require_once("../../Repositories/Classes/conexion.php");
+      include_once("../Models/Persona.php");
       $connection = new Conexion;
     ?>
   </head>
@@ -33,19 +33,34 @@
 
     <div class="container">
 
-    <h1 class="display-4">Bienvenido a tu Inicio</h1>
-    <br><br>
-
     <?php
         $conn = $connection->OpenConnection();
         $id = $_SESSION["id"];
         $query = "SELECT DISTINCT ev.id \"id_evento\" , ev.nombre \"nombre_evento\"
                   FROM sesion S, sesion_usuario SU, Evento ev 
                   WHERE (id_usuario = $id AND S.id = SU.id_sesion) AND ev.id = S.id_evento";
-
+        
+        $query2 = "SELECT id, nombres, apellidos, correo_electronico, telefono FROM";
+        
+        if ($_SESSION["permisos"] == "admin")
+        {
+            $query2 = $query2 . " Organizador";
+        }
+        else
+        {
+            $query2 = $query2 . " Usuario";
+        }
 
         $result = mysqli_query($conn, $query);
+
+        $result2 = mysqli_query($conn, $query2);
+        $temp = mysqli_fetch_array($result2);
+        $usuario = new Persona($temp, "Usuario");  
     ?>
+
+    
+    <h1 class="display-4">Bienvenido a tu Inicio, <?php echo $usuario->nombres;?></h1>
+    <br><br>
 
     
     <table class="table table-striped">
@@ -152,8 +167,16 @@
 
         </tbody>
     </table>
-    </div>
+
     <br><br>
+    <h4>Información de Contacto:</h4>
+    <br>
+    Correo Electrónico:  <?php echo $usuario->correoElectronico; ?>
+    <br>
+    Teléfono:  <?php echo $usuario->telefono; ?>
+    <br><br>
+    </div>
+    
 
     </body>
     

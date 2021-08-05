@@ -1,23 +1,23 @@
 <?php
 
-declare(strict_types=1);
-
-
 class Persona
 {
-
-    public  $idPersona;
-
-    public  $nombre;
-
+    public  $id;
+    public  $nombres;
+    public  $apellidos;
     public  $correoElectronico;
-
     public  $telefono;
+    public  $permisos;
+    
 
-
-    public function __construct()
+    public function __construct($result_array, $permiso)
     {
-        // ...
+        $this->id = $result_array["id"];
+        $this->nombres = $result_array["nombres"];
+        $this->apellidos = $result_array["apellidos"];
+        $this->correoElectronico = $result_array["correo_electronico"];
+        $this->telefono = $result_array["telefono"];
+        $this->permisos = $permiso;
     }
 
 }
