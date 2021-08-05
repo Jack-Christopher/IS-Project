@@ -13,6 +13,10 @@ Va dirigido a nosotros mismos, ya que seremos nosotros los usaremos dicho sistem
 
 ![image](https://github.com/Jack-Christopher/IS-Project/blob/main/gi.gif)
 
+## Implementando ⚙️
+
+![image](https://github.com/Jack-Christopher/IS-Project/blob/main/in.gif)
+
 ## Funcionalidades ⚙️
 - [ ] Registrar Usuario: Esta es una funcionalidad mediante la cual un usuario puede ser registrado en el sistema de forma fácil y rápida
 - [ ] Mostrar Participantes: Tanto el usuario como el administrador pueden visualizar quienes van a participar de cierto evento.
@@ -30,8 +34,6 @@ El usuario podrá visualizar un calendario, donde estarán publicadas las fechas
 
 - [ ] Registrarse como oyente en una reunión: Los usuarios tendrán la opción de registrarse en una evento cualquiera.
 - [ ] Actualización de Eventos: Las fechas en el calendario deben mostrarse de manera organizada y actualizada.
-
-![image](https://github.com/Jack-Christopher/IS-Project/blob/main/in.gif)
 
 ## Práctica de código legible aplicadas ⚙️
 
@@ -227,6 +229,9 @@ class Conexion /*implements iConexion*/
   - Modelo: son las funciones vinculadas con el CRUD del proyecto a nivel interno.
   - Controlador: Implementadas exclusivamente  en los archivos PHP. Establece la conexión entre Vista y Modelo
   - Persistencia: Los datos que deben persisitir a lo largo del funcionamiento y ejecución del programa se envían al SGBD MySQL
+ 
+ Como se puede apreciar en la imagen la estructura del proyecto sigue una arquitectura por capas
+ ![Arquitectura](https://github.com/Jack-Christopher/IS-Project/arquitectura.png)
   
 
 * LENGUAJE UBIQUO: 
@@ -234,8 +239,22 @@ class Conexion /*implements iConexion*/
   la definición de nombres, variables, funciones, clases, etc son autoexplicativas. Por ejemplo, los verbos indican acciones que se realizan (métodos) mientras que
   los sustantivos representan objetos sobre los cuales se realiza esas operaciones.
   y por lo tanto se pudo implemntar el codigo desde el diseño de la mejor forma y haciendo una representación fiel de lo que es la realidad.
-  Además se pudo basar los diseños complejos en un modelo en específico, iniciar una creativa colaboración entre técnicos y expertos del dominio para interactuar lo más cercano posible a los conceptos fundamentales del problema.
+  Además se pudo basar los diseños complejos en un modelo en específico, iniciar una creativa colaboración entre técnicos y expertos del dominio para interactuar lo más cercano posible a los conceptos fundamentales del problema. Ejemplo: Las variables usadas son autoexplicativas:
   
+```
+echo "<th scope=\"row\"> ";
+   echo $registro1["id_sesion"];
+echo "</th>";
+  echo "<td>";
+    echo $registro1["fecha"];
+  echo "</td>";
+  echo "<td>";
+    echo $registro1["hora"];
+  echo "</td>";
+  echo "<td>";
+    echo $registro1["nombre_evento"];
+  echo "</td>";
+```
 * BOUNDED CONTEXT:
   Sirve para acotar los distintos dominios que hay, esto es, delimitar conceptos en cada parte del dominio agrupando elementos que están relacionados. 
   Se hizo esto al modularizar la logica de funcionamiento en archivos, clases, funciones, etc.
