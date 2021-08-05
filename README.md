@@ -11,9 +11,9 @@ Va dirigido a nosotros mismos, ya que seremos nosotros los usaremos dicho sistem
 
 
 
-![image](https://github.com/ZhengYaWei1992/ZWProgressView/blob/master/Untitled3.gif)
+![image](https://github.com/Jack-Christopher/IS-Project/master/gi.gif)
 Explicación
-https://github.com/ZhengYaWei1992/ZWProgressView/blob/master/Untitled3.gif
+https://github.com/Jack-Christopher/IS-Project/master/gi.gif
  Esta URL de enlace es la URL de enlace que se muestra en github después de cargar la imagen gif.
  
  
