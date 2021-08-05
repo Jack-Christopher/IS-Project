@@ -9,14 +9,10 @@ El propósito es poder desarrollar plena y satisfactoriamente el software que ha
 
 Va dirigido a nosotros mismos, ya que seremos nosotros los usaremos dicho sistema , además a cualquier otra persona que esté interesada en la computación le podrá ser de utilidad para que pueda visualizar los eventos y que pueda tener un control sobre ellos.
 
-
+## Prototipo ⚙️
 
 ![image](https://github.com/Jack-Christopher/IS-Project/blob/main/gi.gif)
-Explicación
-https://github.com/Jack-Christopher/IS-Project/master/gi.gif
- Esta URL de enlace es la URL de enlace que se muestra en github después de cargar la imagen gif.
- 
- 
+
  
 ## Funcionalidades ⚙️
 - [ ] Registrar Usuario: Esta es una funcionalidad mediante la cual un usuario puede ser registrado en el sistema de forma fácil y rápida
