@@ -13,7 +13,10 @@ Va dirigido a nosotros mismos, ya que seremos nosotros los usaremos dicho sistem
 
 ![image](https://github.com/Jack-Christopher/IS-Project/blob/main/gi.gif)
 
- 
+## Implementando ⚙️
+
+![image](https://github.com/Jack-Christopher/IS-Project/blob/main/in.gif)
+
 ## Funcionalidades ⚙️
 - [ ] Registrar Usuario: Esta es una funcionalidad mediante la cual un usuario puede ser registrado en el sistema de forma fácil y rápida
 - [ ] Mostrar Participantes: Tanto el usuario como el administrador pueden visualizar quienes van a participar de cierto evento.
