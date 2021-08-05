@@ -9,12 +9,18 @@ _colocar texto_
 
 
 ## Funcionalidades ⚙️
-
-_colocar texto_
-
-```
-texto.
-```
+- [ ] Registrar Usuario: Esta es una funcionalidad mediante la cual un usuario puede ser registrado en el sistema de forma fácil y rápida
+- [ ] Mostrar Participantes: Tanto el usuario como el administrador pueden visualizar quienes van a participar de cierto evento.
+- [ ] Visualización de fechas importantes: Las fechas importantes son: conferencias, debates, simposios y cualquier otro tipo de evento que sea relacionado a Ciencias de la Computación.
+El usuario podrá visualizar un calendario, donde estarán publicadas las fechas importantes más cercanas.
+- [ ] Publicación de documentos: Los administradores pueden publicar documentos relevantes a cierto evento.
+- [ ] Descargar documentos relevantes: Los usuarios pueden descargar documentos relevantes a cierto evento.
+- [ ] Buscar evento: Se pueden buscar eventos mediante filtros como: área, tópico, país o palabras clave.
+- [ ] Mostrar estadísticas del evento: Se deben mostrar ciertas estadísticas de un evento para los administradores como: scopus, web of science, número de accesos, más accedidos.
+- [ ] Mostrar detalles del evento: Se debe mostrar detalles de un evento.
+- [ ] Agregar Evento: El administrador puede agregar eventos al sistema, los cuales se publicarán automáticamente, para que puedan ser vistos y buscados por los usuarios del sistema
+- [ ] Registrarse como oyente en una reunión: Los usuarios tendrán la opción de registrarse en una evento cualquiera.
+- [ ] Actualización de Eventos: Las fechas en el calendario deben mostrarse de manera organizada y actualizada.
 
 ## Práctica de código legible aplicadas ⚙️
 
