@@ -11,7 +11,7 @@ Va dirigido a nosotros mismos, ya que seremos nosotros los usaremos dicho sistem
 
 ## Prototipo ⚙️
 
-![image](https://github.com/Jack-Christopher/IS-Project/blob/main/gi.gif=250x250)
+![image](https://github.com/Jack-Christopher/IS-Project/blob/main/gi.gif)
 
  
 ## Funcionalidades ⚙️
