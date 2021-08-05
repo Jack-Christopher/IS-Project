@@ -1,0 +1,21 @@
+
+body
+{
+    background: lightblue;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+
+#index-buttons
+{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+
+div.image 
+{
+    content:url('../Images/logo.png');
+    /*border-radius: 50%;*/
+}
