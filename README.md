@@ -11,7 +11,7 @@ Va dirigido a nosotros mismos, ya que seremos nosotros los usaremos dicho sistem
 
 
 
-![image](https://github.com/Jack-Christopher/IS-Project/master/gi.gif)
+![image](https://github.com/Jack-Christopher/IS-Project/main/gi.gif)
 Explicación
 https://github.com/Jack-Christopher/IS-Project/master/gi.gif
  Esta URL de enlace es la URL de enlace que se muestra en github después de cargar la imagen gif.
