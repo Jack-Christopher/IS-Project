@@ -21,7 +21,9 @@ El usuario podrá visualizar un calendario, donde estarán publicadas las fechas
 - [ ] Mostrar estadísticas del evento: Se deben mostrar ciertas estadísticas de un evento para los administradores como: scopus, web of science, número de accesos, más accedidos.
 - [ ] Mostrar detalles del evento: Se debe mostrar detalles de un evento.
 - [ ] Agregar Evento: El administrador puede agregar eventos al sistema, los cuales se publicarán automáticamente, para que puedan ser vistos y buscados por los usuarios del sistema
+
 ![image](https://user-images.githubusercontent.com/42560116/128414202-7ddd2d1b-c08e-46d4-801b-b0b020b9fa68.png)
+
 
 - [ ] Registrarse como oyente en una reunión: Los usuarios tendrán la opción de registrarse en una evento cualquiera.
 - [ ] Actualización de Eventos: Las fechas en el calendario deben mostrarse de manera organizada y actualizada.
