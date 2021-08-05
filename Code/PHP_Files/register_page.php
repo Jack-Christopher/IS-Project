@@ -49,10 +49,6 @@
 <script>
     function formEsValido()
     {
-        /// 
-        /// Variables usadas en forma de un array para 
-        /// el tratamiendo de los datos del registro
-        /// 
         var nombres = $("#name");
         var apellidos = $("#last_name");
         var correo_electronico = $("#e_mail");
@@ -105,73 +101,46 @@
         return true;
     }
 
-    /// 
-    /// Funcion dnetor del cookbook para mostrar un mensaje de redireccionamiento
-    ///
-    function RedirectMessage()
-    {
-        alertify.success("El registro se realizó exitosamente");
-    }
-
-    /// 
-    /// Funcion para redireccionar a una pagina(login). 
-    ///
-
-    function setLocation($window,$new_location)
-    {
-        window.location=$new_location;
-    }
-
-    function Redirect()
-    {
-        setTimeout(setLocation, 6000,window,"main_view.php");
-
-    }
-    /// 
-    /// Funcion principal del register
-    ///
-    function register_main($condition)
-    {
-        if($condition==true)
-        {
-            ///
-            /// Uso de arrays  para enviar a la BD mediante AJAX
-            ///
-            cadena = $("#signup_form").serialize();
-
-            $.ajax(
-            {
-                type: 'POST',
-                url: "register.php",
-                data: cadena,
-                success: function(data) 
-                {
-                    if(data==0)
-                    {  
-                        ///
-                        /// Uso del Cookbook para el redireccionamiento
-                        ///
-                        RedirectMessage()
-                        Redirect()
-                    }
-                    else 
-                    {
-                        alertify.error("No se pudo registrar sus usuario.")
-                    }
-                }
-
-             })
-        }
-    }
-    
-    ///
-    /// Composicion de funciones o pipeline de funciones.
-    /// para el registro de nuevos usuarios
-    ///
     $(document).ready( function() 
     { 
-        $("#submit_button").click(function() {register_main(formEsValido())})
+        $("#submit_button").click( function() 
+        {
+            if(formEsValido())
+            {
+                cadena = $("#signup_form").serialize();
+
+                $.ajax(
+                {
+                    type: 'POST',
+                    url: "register.php",
+                    data: cadena,
+                    success: function(data) 
+                    {
+                        if(data==0)
+                        {
+                            /*alertify.set('notifier','position', 'top-center');*/
+                            message = alertify.success("El registro se realizó exitosamente");
+                            
+                            window.setTimeout(function()
+                            {
+                                message = alertify.success("Redirigiendo a la página principal ...");
+                            } , 3000);
+
+                            window.setTimeout(function()
+                            {
+                                window.location="main_view.php";
+                            } , 6000);
+                            
+                        }
+                        else 
+						{
+							alertify.error("No se pudo registrar sus usuario.")
+						}
+                    }
+                    
+                })
+            }
+            
+        })
     })
-
-
 </script>

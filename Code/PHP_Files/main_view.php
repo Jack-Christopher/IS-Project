@@ -167,11 +167,9 @@
 <script>
 
 // Redirigir a pagina de vista del evento
-function show_event(numero)
+function show_event(id_evento)
 {
-    alert("Hola mundo " + numero);
-
-    window.location="event_view.php?id=" + numero ;
+    window.location="event_view.php?id=" + id_evento ;
 }
 
 

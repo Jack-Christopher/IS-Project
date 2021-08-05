@@ -43,7 +43,7 @@ CREATE TABLE Autor (
 
 CREATE TABLE Categoria(
     id INT PRIMARY KEY AUTO_INCREMENT,
-    nombre VARCHAR(8)
+    nombre VARCHAR(20)
 );
 
 CREATE TABLE Evento(
@@ -68,7 +68,7 @@ CREATE TABLE Sesion(
 CREATE TABLE Documento(
 	id INT PRIMARY KEY AUTO_INCREMENT,
     titulo VARCHAR(30),
-    archivo BLOB, 
+    nombre_archivo VARCHAR(75), 
     cantidad_descargas INT
 );
 

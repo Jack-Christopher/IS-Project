@@ -1,4 +1,3 @@
-<!-- Interfaz de usuario -->
 <html>
 <head>
     <title> Bienvenido a Organizador de Horario </title>
@@ -39,78 +38,25 @@
 </html>
 
 <script>
-
-    function verificarNombre(nombre_de_usuario)
-    {
-
-        if(nombre_de_usuario.val() == "")
-        {
-            var op = alertify.alert("Debe colocar su nombre de usuario.").setHeader("Atención");
-            return false;
-        }
-
-        return true;
-    }
-
-    function verificarClave(clave_de_usuario)
-    {
-        if(clave_de_usuario.val() == "")
-        {
-            var op = alertify.alert("Debe colocar su clave de usuario" ).setHeader("Atención");
-            return false;
-        }
-
-        return true;
-    }
-
-    //Controller
     function formEsValido()
     {
         var nombre_de_usuario = $("#user_name");
         var clave_de_usuario = $("#password");
 
-        if(verificarNombre(nombre_de_usuario) && verificarClave(clave_de_usuario))
+        if(nombre_de_usuario.val() == "")
         {
-            return true;
+            var op = alertify.alert("Debe colocar su nombre de usuario.").setHeader("Atención");
+
+            return false;
+            
+        }
+        else if(clave_de_usuario.val() == "")
+        {
+            alertify.alert("Debe colocar su clave de usuario" ).setHeader("Atención");
+            return false;
         }
 
-        return false;
-    }
-
-    //Servidor
-    
-    function ejecutarInicioSesion()
-    {
-        cadena = $("#login_form").serialize();
-
-        $.ajax(
-        {
-            type: 'POST',
-            url: "login.php",
-            data: cadena,
-            success: function(data) 
-            {
-                if(data==0)
-                {
-                    alertify.success("Inicio de sesión exitoso");
-                    window.setTimeout(function()
-                    {
-                        window.location="main_view.php";
-                    } , 2000);
-                        
-                         
-                }
-                else if (data == 1)
-                {
-                    alertify.error("Los datos ingresados son incorrectos.")
-                }
-                else
-                {
-                    alertify.error("Ha ocurrido un error." )
-                }
-            }
-                
-        })
+        return true;
     }
 
     $(document).ready( function() 
@@ -119,7 +65,45 @@
         {
             if(formEsValido())
             {
-                ejecutarInicioSesion();
+                cadena = $("#login_form").serialize();
+
+                $.ajax(
+                {
+                    type: 'POST',
+                    url: "login.php",
+                    data: cadena,
+                    success: function(data) 
+                    {
+                        if(data==0)
+                        {
+                            alertify.success("Inicio de sesión exitoso");
+
+                            window.setTimeout(function()
+                            {
+                                window.location="main_view.php";
+                            } , 2000);
+                        }
+                        else if (data == 1)
+                        {
+                            alertify.success("Inicio de sesión exitoso");
+
+                            window.setTimeout(function()
+                            {
+                                window.location="admin_view.php";
+                            } , 2000);
+                        }
+                        else if (data == 2)
+						{
+							alertify.error("Los datos ingresados son incorrectos.")
+						}
+                        else
+                        {
+                            alertify.error("Ha ocurrido un error." )
+                            alertify.error(data )
+                        }
+                    }
+                    
+                })
             }
             
         })
