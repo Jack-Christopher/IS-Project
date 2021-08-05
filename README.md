@@ -10,6 +10,14 @@ El propósito es poder desarrollar plena y satisfactoriamente el software que ha
 Va dirigido a nosotros mismos, ya que seremos nosotros los usaremos dicho sistema , además a cualquier otra persona que esté interesada en la computación le podrá ser de utilidad para que pueda visualizar los eventos y que pueda tener un control sobre ellos.
 
 
+
+![image](https://github.com/ZhengYaWei1992/ZWProgressView/blob/master/Untitled3.gif)
+Explicación
+https://github.com/ZhengYaWei1992/ZWProgressView/blob/master/Untitled3.gif
+ Esta URL de enlace es la URL de enlace que se muestra en github después de cargar la imagen gif.
+ 
+ 
+ 
 ## Funcionalidades ⚙️
 - [ ] Registrar Usuario: Esta es una funcionalidad mediante la cual un usuario puede ser registrado en el sistema de forma fácil y rápida
 - [ ] Mostrar Participantes: Tanto el usuario como el administrador pueden visualizar quienes van a participar de cierto evento.
