@@ -13,10 +13,6 @@ Va dirigido a nosotros mismos, ya que seremos nosotros los usaremos dicho sistem
 
 ![image](https://github.com/Jack-Christopher/IS-Project/blob/main/gi.gif)
 
-## Implementando ⚙️
-
-![image](https://github.com/Jack-Christopher/IS-Project/blob/main/in.gif)
-
 ## Funcionalidades ⚙️
 - [ ] Registrar Usuario: Esta es una funcionalidad mediante la cual un usuario puede ser registrado en el sistema de forma fácil y rápida
 - [ ] Mostrar Participantes: Tanto el usuario como el administrador pueden visualizar quienes van a participar de cierto evento.
@@ -34,6 +30,8 @@ El usuario podrá visualizar un calendario, donde estarán publicadas las fechas
 
 - [ ] Registrarse como oyente en una reunión: Los usuarios tendrán la opción de registrarse en una evento cualquiera.
 - [ ] Actualización de Eventos: Las fechas en el calendario deben mostrarse de manera organizada y actualizada.
+- [ ] 
+![image](https://github.com/Jack-Christopher/IS-Project/blob/main/in.gif)
 
 ## Práctica de código legible aplicadas ⚙️
 
