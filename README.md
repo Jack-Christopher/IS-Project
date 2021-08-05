@@ -5,7 +5,7 @@ _Presentacion del proyecto final de Ingenieria de Software de los alumnos de la 
 
 ## Propósito del proyecto ⚙️
 
-El propósito es poder desarrollar plena y satisfactoriamente el software que ha sido elegido “Sistema de Publicación de Eventos Relacionados a Computación”, y llevarlo a cabo sin alguna complicación significativa.
+El propósito es poder desarrollar plena y satisfactoriamente el software que ha sido elegido “Sistema de Publicación de Eventos Relacionados a Computación”, y llevarlo a cabo sin alguna complicación significativa, aplicando los conocimientos y técnicas aprendidos a lo largo del curso de Ingeniería de Software 1, que van desde realizar documentos de descripción de requisitos y acerca de la arquitectura de nuestro software, hasta aplicar estilos de programación a la implementación de este sistema.
 
 Va dirigido a nosotros mismos, ya que seremos nosotros los usaremos dicho sistema , además a cualquier otra persona que esté interesada en la computación le podrá ser de utilidad para que pueda visualizar los eventos y que pueda tener un control sobre ellos.
 
