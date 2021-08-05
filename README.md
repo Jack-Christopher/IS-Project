@@ -97,6 +97,7 @@ Guiones bajos: Guiones bajos entre palabras, tales como: mysql_real_escape_strin
 * REPOSITORIES: 
   La logica del programa permite acceder a la capa de datos desde un elemento externo (ceonexion a MySQL desde PHP)  de modo que los modelos y los datos no estan acoplados
   
+  
 * AGREGADOS: 
   Son elementos abstractos que engloban un Concepto general
   Usos en el proyecto:
