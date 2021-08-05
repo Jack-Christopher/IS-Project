@@ -30,7 +30,7 @@ El usuario podrá visualizar un calendario, donde estarán publicadas las fechas
 
 - [ ] Registrarse como oyente en una reunión: Los usuarios tendrán la opción de registrarse en una evento cualquiera.
 - [ ] Actualización de Eventos: Las fechas en el calendario deben mostrarse de manera organizada y actualizada.
-- [ ] 
+
 ![image](https://github.com/Jack-Christopher/IS-Project/blob/main/in.gif)
 
 ## Práctica de código legible aplicadas ⚙️
