@@ -73,6 +73,68 @@ Guiones bajos: Guiones bajos entre palabras, tales como: mysql_real_escape_strin
 * _Este estilo nos permite optimizar el codigo evitando funciones innecesarias y ademas de la escalabilidad a la hora de usar muchas funciones en el codigo_
 
 
+## Conceptos DDD aplicados ⚙️
+
+* SERVICIOS:
+  - Servicio de Dominio: 
+    Es donde se implementó toda la lógica del negocio (cumpliendo los requisitos).
+  - Servicio de Aplicación:
+    Es usada en casi cualquier funcionalidad implementada en los archivos
+  - Servicio de Infraestructura:
+    Son las funciones que no dependen del negocio (dominio).
+    
+  Se han creado servicios tanto en PHP como en JavaScript, las cuales cumplen con ejecutar uno de los servicios en especial para dar funcionamiento al proyecto.
+   
+* ENTIDADES:
+  Se han creado clases que representan entidades en el proyecto, tales como Clases Usario, Organizador, Evento cuyas instancias tienen una identidad PROPIA para que puedan ser identificados, sus valores si pueden cambiarse a diferencia de los Value Object.
+  
+* VALUE OBJECT:
+  Similares a la entidades, pero carecen de identidad y son muy requeridos por sus atributos
+  Usos en el proyecto:
+  - Clases creadas para almacenar exclusivamente los valores que son inmutables (carecen de metodos para modificarlos), sus valores son inicializados en su construcción
+  - Las imágenes incluidas  
+  
+* REPOSITORIES: 
+  La logica del programa permite acceder a la capa de datos desde un elemento externo (ceonexion a MySQL desde PHP)  de modo que los modelos y los datos no estan acoplados
+  
+* AGREGADOS: 
+  Son elementos abstractos que engloban un Concepto general
+  Usos en el proyecto:
+  - Un Evento en general incluye varias elementos como las clases:  Simposio, Ponencia, Ssesion, etc; los engloba en un mismo concepto: EVENTO los cuales pueden ser construidos por un Factory
+
+* EVENTOS DE DOMINIOS: (Aún no usado)
+  Indica que lo eventos referentes a los elementos del programa deben ser almacenados 
+
+* FACTORIAS: 
+  Son Clases que pueden crear objetos para que luego sean usados como bloques.
+  
+  Al momento de crear Eventos se hace uso del patron de diseño Factory para poder crear un elemento nuevo (Evento)  a partir de los datos relacionados a éste.
+
+* ARQUITECTURA EN CAPAS: 
+  Se distinguen al menos 4 capas:
+  - Vista: Implementadas en los archivos HTML y CSS (junto con Bootstrap) que representa la vista de cada funcionalidad del proyecto
+  - Modelo: son las funciones vinculadas con el CRUD del proyecto a nivel interno.
+  - Controlador: Implementadas exclusivamente  en los archivos PHP. Establece la conexión entre Vista y Modelo
+  - Persistencia: Los datos que deben persisitir a lo largo del funcionamiento y ejecución del programa se envían al SGBD MySQL
+  
+
+* LENGUAJE UBIQUO: 
+  El lenguaje usado ha sido ubiquo en el sentido que ha sido un lenaguje común entre los programadores y los usuarios, esto es:
+  la definición de nombres, variables, funciones, clases, etc son autoexplicativas. Por ejemplo, los verbos indican acciones que se realizan (métodos) mientras que
+  los sustantivos representan objetos sobre los cuales se realiza esas operaciones.
+  y por lo tanto se pudo implemntar el codigo desde el diseño de la mejor forma y haciendo una representación fiel de lo que es la realidad.
+  Además se pudo basar los diseños complejos en un modelo en específico, iniciar una creativa colaboración entre técnicos y expertos del dominio para interactuar lo más cercano posible a los conceptos fundamentales del problema.
+  
+* BOUNDED CONTEXT:
+  Sirve para acotar los distintos dominios que hay, esto es, delimitar conceptos en cada parte del dominio agrupando elementos que están relacionados. 
+  Se hizo esto al modularizar la logica de funcionamiento en archivos, clases, funciones, etc.
+
+
+
+
+
+
+
 ## Principios SOLID aplicados ⚙️
 - [ ] _S – Single Responsibility Principle (SRP)_
 - [ ] _O – Open/Closed Principle (OCP)_
@@ -80,11 +142,6 @@ Guiones bajos: Guiones bajos entre palabras, tales como: mysql_real_escape_strin
 - [ ] _I – Interface Segregation Principle (ISP)_
 - [ ] _D – Dependency Inversion Principle (DIP)_
 
-
-## Conceptos DDD aplicados ⚙️
-* Poner el foco primario del proyecto en el núcleo y la lógica del dominio.
-* Basar los diseños complejos en un modelo.
-* Iniciar una creativa colaboración entre técnicos y expertos del dominio para interactuar lo más cercano posible a los conceptos fundamentales del problema.
 
 ---
 
