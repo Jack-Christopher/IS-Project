@@ -100,10 +100,64 @@ Guiones bajos: Guiones bajos entre palabras, tales como: mysql_real_escape_strin
     Son las funciones que no dependen del negocio (dominio).
     
   Se han creado servicios tanto en PHP como en JavaScript, las cuales cumplen con ejecutar uno de los servicios en especial para dar funcionamiento al proyecto.
+```
+function logout()
+{
+    $.ajax({
+        url:'main_view.php?logout=true',
+        type:'GET',
+        success: function() 
+        {
+            alertify.confirm('¿Desea cerrar su sesión?',
+            function()
+            {
+                alertify.set('notifier','position', 'top-center');
+                alertify.message("Hasta luego.", 3);
+                window.setTimeout(function()
+                {
+                    window.location="login_page.php";    
+                } , 1500); 
+            },
+            function()
+            {
+                alertify.set('notifier','position', 'top-center');
+                alertify.message("Siga con nosotros.", 4);
+            }
+            ).setHeader("Atención");
+    	}
+    })
+
+}
+```  
    
 * ENTIDADES:
   Se han creado clases que representan entidades en el proyecto, tales como Clases Usario, Organizador, Evento cuyas instancias tienen una identidad PROPIA para que puedan ser identificados, sus valores si pueden cambiarse a diferencia de los Value Object.
   
+```
+<?php
+
+class Persona
+{
+    public  $id;
+    public  $nombres;
+    public  $apellidos;
+    public  $correoElectronico;
+    public  $telefono;
+    public  $permisos;
+    
+
+    public function __construct($result_array, $permiso)
+    {
+        $this->id = $result_array["id"];
+        $this->nombres = $result_array["nombres"];
+        $this->apellidos = $result_array["apellidos"];
+        $this->correoElectronico = $result_array["correo_electronico"];
+        $this->telefono = $result_array["telefono"];
+        $this->permisos = $permiso;
+    }
+
+}
+```
 * VALUE OBJECT:
   Similares a la entidades, pero carecen de identidad y son muy requeridos por sus atributos
   Usos en el proyecto:
@@ -112,6 +166,45 @@ Guiones bajos: Guiones bajos entre palabras, tales como: mysql_real_escape_strin
   
 * REPOSITORIES: 
   La logica del programa permite acceder a la capa de datos desde un elemento externo (ceonexion a MySQL desde PHP)  de modo que los modelos y los datos no estan acoplados
+
+```
+<?php
+
+/*include("../Interfaces/iConexion.php");*/
+
+class Conexion /*implements iConexion*/
+{
+  public $dbhost;
+  public $dbuser;
+  public $dbpassword;
+  public $dbname;
+  public $conexion;
+  
+  public function __construct()
+  {
+    $this->dbhost = "localhost";
+    $this->dbuser = "root";
+    $this->dbpassword = "root";
+    $this->dbname = "mainDB";
+    $this->conexion = null;
+  }
+
+  public function OpenConnection()
+  {
+    $this->connection = new mysqli($this->dbhost, $this->dbuser, $this->dbpassword, $this->dbname);
+    return $this->connection;
+  }
+ 
+  function CloseConnection()
+  {
+    $this->conexion = null;
+  }
+
+}
+
+?>
+```
+        
   
   
 * AGREGADOS: 
