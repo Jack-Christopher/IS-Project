@@ -306,7 +306,7 @@ class Evento
   
   Ejemplo de uso:
   
-  El conepto de DDD: Repositorio sigue el patrón de diseño Strategy, por lo cual, obedece también el principio OCP:
+  El concepto de DDD: Repositorio sigue el patrón de diseño Strategy, por lo cual, obedece también el principio OCP:
 ```
 interface iConexion
 {
@@ -345,7 +345,7 @@ class Conexion implements iConexion
   }
 }
 ```
-La clase Conexion implementa la interfaz iConexion, lo que le permite definir una familia de comportamientos similares (en este caso se podrían crear clases que implementen la interfaz iConexion para obtener conexiones para SGBD distintas a MySQL y que sobreescriban los métodos de conexión para cada caso), poner cada uno de ellos en una clase separada y hacer que sus objetos sean intercambiables (poder usar cualquier conexión indistintamente de a que SGBD se intenten conectar), por lo que está abierta para extensiones (de otras SGBD) y cerrada para modificaciones (tienen los mismos métodos en todas la implmenentaciones).
+La clase Conexion implementa la interfaz iConexion, lo que le permite definir una familia de comportamientos similares (en este caso se podrían crear clases que implementen la interfaz iConexion para obtener conexiones para SGBD distintas a MySQL y que sobreescriban los métodos de conexión para cada caso), poner cada uno de ellos en una clase separada y hacer que sus objetos sean intercambiables (poder usar cualquier conexión indistintamente de a que SGBD se intenten conectar), por lo que está abierta para extensiones (de otras SGBD) y cerrada para modificaciones (tienen los mismos métodos en todas la implementaciones).
 
 
 - [ ] _L – Liskov Substitution Principle (LSP)_
@@ -357,8 +357,8 @@ La clase Conexion implementa la interfaz iConexion, lo que le permite definir un
 
 ### COLABORADORES 🔩
 
-- [x] Elizabeth Huanca Parqui
 - [x] Jack Christopher Huaihua Huayhua
+- [x] Elizabeth Huanca Parqui
 - [x] Rodrigo Jesus Santisteban Pachari
 - [x] Santiago Javier Vilca Limachi
 - [x] Gabriela Angel Chipana Perez
