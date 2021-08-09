@@ -263,7 +263,91 @@ echo "</th>";
 
 ## Principios SOLID aplicados ⚙️
 - [ ] _S – Single Responsibility Principle (SRP)_
+  “Una clase debe tener una sola razón para cambiar”, es decir, debe tener una sola responsabilidad.
+  Este principio se ocupa específicamente de la cohesión.  La cohesión se define como la afinidad funcional de los elementos de un módulo.
+  
+  Ejemplo de uso:
+  Los "models" tienen un único propósito, éste es representar el conocimiento que el equipo tiene sobre el dominio, expresado en clases:
+```
+class Evento
+{
+    public  $idEvento;
+    public  $nombre;
+    public  $descripcion;
+    public  $pais;
+    
+    public function __construct($result_array)
+    {
+        $this->idEvento = $result_array["id"];
+        $this->nombre = $result_array["nombre"];
+        $this->descripcion = $result_array["descripcion"];
+        $this->pais = $result_array["pais"];
+    }
+    
+    public function get_values()
+    {
+        $values = [
+            "id" => "$this->idEvento",
+            "nombre" => "$this->nombre",
+            "descripcion" => "$this->descripcion",
+            "pais" => "$this->pais",
+        ];
+        return $values;
+    }
+}
+```
+ En este caso, la clase Evento representa la información que se debe conocer sobre cada evento del proyecto. No tiene ninguna función innecesaria ni irrelevante en ninguna de las clases del proyecto.
+
+
 - [ ] _O – Open/Closed Principle (OCP)_
+  "Las entidades de software (clases, módulos, funciones, etc.) deben estar abiertas para una extensión, pero cerradas para modificaciones". 
+  Podemos extender el comportamiento de una clase, cuando sea necesario, a través de la herencia, la interfaz y la composición. 
+  Sin embargo, no podemos permitir que la apertura de esta clase haga modificaciones menores.
+  
+  Ejemplo de uso:
+  
+  El conepto de DDD: Repositorio sigue el patrón de diseño Strategy, por lo cual, obedece también el principio OCP:
+```
+interface iConexion
+{
+  public function __construct();
+  public function OpenConnection();
+  public function CloseConnection();
+}
+
+
+class Conexion implements iConexion
+{
+  public $dbhost;
+  public $dbuser;
+  public $dbpassword;
+  public $dbname;
+  public $conexion;
+  
+  public function __construct()
+  {
+    $this->dbhost = "localhost";
+    $this->dbuser = "root";
+    $this->dbpassword = "root";
+    $this->dbname = "mainDB";
+    $this->conexion = null;
+  }
+
+  public function OpenConnection()
+  {
+    $this->connection = new mysqli($this->dbhost, $this->dbuser, $this->dbpassword, $this->dbname);
+    return $this->connection;
+  }
+ 
+  function CloseConnection()
+  {
+    $this->conexion = null;
+  }
+}
+```
+La clase Conexion implementa la interfaz iConexion, lo que le permite definir una familia de comportamientos similares (en este caso se podrían crear clases que implementen la interfaz iConexion para obtener conexiones para SGBD distintas a MySQL y que sobreescriban los métodos de conexión para cada caso), poner cada uno de ellos en una clase separada y hacer que sus objetos sean intercambiables (poder usar cualquier conexión indistintamente de a que SGBD se intenten conectar), por lo que está abierta para extensiones (de otras SGBD) y cerrada para modificaciones (tienen los mismos métodos en todas la implmenentaciones).
+
+
 - [ ] _L – Liskov Substitution Principle (LSP)_
 - [ ] _I – Interface Segregation Principle (ISP)_
 - [ ] _D – Dependency Inversion Principle (DIP)_
