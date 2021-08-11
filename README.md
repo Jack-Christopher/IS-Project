@@ -144,7 +144,7 @@ CREATE TABLE Documento(
 - [ ] _7 - Evite la Anidación Profunda_
 
 	Las anidaciones profundas son evitadas lo más que sea posible.
-	Ejemplo en el Código (Anidación Simple): 
+	Ejemplo en el Código (Condicional Simple): 
 	
 ```
 	$conn = $connection->OpenConnection();
