@@ -15,7 +15,7 @@ Va dirigido a nosotros mismos, ya que seremos nosotros los usaremos dicho sistem
 
 ## Implementando ⚙️
 
-![image](https://github.com/Jack-Christopher/IS-Project/blob/main/in.gif)
+![image](https://github.com/Jack-Christopher/IS-Project/blob/main/Presentacion-Expo/implementacion.gif)
 
 ## Funcionalidades ⚙️
 - [ ] Registrar Usuario: Esta es una funcionalidad mediante la cual un usuario puede ser registrado en el sistema de forma fácil y rápida
