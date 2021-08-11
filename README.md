@@ -349,15 +349,49 @@ La clase Conexion implementa la interfaz iConexion, lo que le permite definir un
 
 
 - [ ] _L – Liskov Substitution Principle (LSP)_
-"Cada clase que hereda de otra puede usarse como su padre sin necesidad de conocer las diferencias entre ellas."
-
-
 - [ ] _I – Interface Segregation Principle (ISP)_
-"Muchas interfaces específicas son mejores que una única más general."
+```
+<?php
+
+interface funcionalidad_get
+{
+    public function get_values();
+    
+}
+
+class Sesion implements funcionalidad_get
+{
+    public  $id;
+    public  $hora;
+    public  $fecha;
+    public  $InformacionExtra;
+    public  $Evento;
 
 
+    public function __construct($result_array)
+    {
+        $this->id = $result_array["id"];
+        $this->fecha = $result_array["fecha"];
+        $this->hora = $result_array["hora"];
+        $this->Evento = $result_array["informacionExtra"];
+    }
+
+    public function get_values()
+    {
+        $values = [
+            "id" => "$this->id",
+            "fecha" => "$this->fecha",
+            "hora" => "$this->hora",
+            "informacionExtra" => "$this->Evento",
+        ];
+        return $values;
+    }
+
+}
+```
+Interface Segregation Principle, al usar varias clases que requieran obtener los datos para hacer las consultas de la BD, hacemos uso de una interfaz comun para las demas clases que tambien necesiten de hacer consultas.
 - [ ] _D – Dependency Inversion Principle (DIP)_
-"El problema cuando construimos software es que solemos hacer muchas dependencias y esto conlleva a un futuro que cambiar una pieza de nuestro código obliga a refactorizar todo el proyecto y esto no debería ser así."
+
 
 ---
 
