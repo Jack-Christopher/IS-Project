@@ -1,12 +1,12 @@
 <?php
-
+//Implementacion principio SOLID LSP
 interface IStatictics
 {
     public function __construct($result_array);
     public function get_values();
 }
 
-
+//class Statictics usada para crear el array de cada columna visitada
 class Statictics implements IStatictics
 {
 
