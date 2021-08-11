@@ -107,6 +107,8 @@ Guiones bajos: Guiones bajos entre palabras, tales como: mysql_real_escape_strin
 ```
 
 - [ ] _6 - Principio DRY_
+
+	(Don't repeat yourself)
 	No se produce la repetición de codigo en ninguna pare del proyecto.
 	Por ejemplo en la Base de Datos, no es repetida ninguna pieza de información, cada tabla contiene información única sin duplicados :
 ```
