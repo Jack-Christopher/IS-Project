@@ -175,6 +175,10 @@ $.ajax(
 * _Esto nos permite optimizar el codigo evitando funciones innecesarias y ademas de la escalabilidad a la hora de usar muchas funciones en el codigo_
 * _Este estilo nos permite optimizar el codigo evitando funciones innecesarias y ademas de la escalabilidad a la hora de usar muchas funciones en el codigo_
 
+- [ ] CONTROLLER :
+
+
+- [ ] REPOSITORIES :
 
 ## Conceptos DDD aplicados ⚙️
 
