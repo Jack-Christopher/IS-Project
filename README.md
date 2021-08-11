@@ -443,6 +443,64 @@ La clase Conexion implementa la interfaz iConexion, lo que le permite definir un
 - [ ] _L – Liskov Substitution Principle (LSP)_
 "Cada clase que hereda de otra puede usarse como su padre sin necesidad de conocer las diferencias entre ellas."
 
+Principio de sustitución de Liskov o LSP (Liskov Substitution Principle) es un principio de la programación orientada a objetos. y puede definirse como: Cada clase que hereda de otra puede usarse como su padre sin necesidad de conocer las diferencias entre ellas.
+
+En lenguaje más formal: si S es un subtipo de T, entonces los objetos de tipo T en un programa de computadora pueden ser sustituidos por objetos de tipo S (es decir, los objetos de tipo S pueden sustituir objetos de tipo T), sin alterar ninguna de las propiedades deseables de ese programa (la corrección, la tarea que realiza, etc.)
+
+En Statistics.php clase usada para implementar la impresion de las estadisticas de cada evento podemos presenciar el uso de la implementacion de las clases madres sin necesidad de alterar las propiedades principales del programa
+
+<?php
+
+```
+interface IStatictics
+{
+    public function __construct($result_array);
+    public function get_values();
+    public function get_():void;
+}
+
+
+class Statictics implements IStatictics
+{
+
+    public  $nombre_archivo;
+    public  $cantidad_descargas;
+    public  $invitado_nombres;
+    public  $invitado_apellidos;
+    public  $organizador_apellidos;
+    public  $session_id;
+    public  $session_date;
+    public  $usuario_apellidos;
+
+    public function __construct($result_array)
+    {
+        $this->nombre_archivo = $result_array["nombre_archivo"];
+        $this->cantidad_descargas = $result_array["cantidad_descargas"];
+        $this->invitado_nombres = $result_array["nombre_invitados"];
+        $this->invitado_apellidos = $result_array["apellidos_invitados"];
+        $this->organizador_apellidos = $result_array["organizador_apellidos"];
+        $this->sesion_id = $result_array["sesion_id"];
+        $this->sesion_fecha = $result_array["sesion_fecha"];
+        $this->usuario_apellidos = $result_array["usuario_apellidos"];
+    }
+
+    public function get_values()
+    {
+        $values = [
+            "nombre_archivo" => "$this->nombre_archivo",
+            "cantidad_descargas" => "$this->cantidad_descargas",
+            "invitado_nombres" => "$this->invitado_nombres",
+            "invitado_apellidos" => "$this->invitado_apellidos",
+            "organizador_apellidos" => "$this->organizador_apellidos",
+            "sesion_id" => "$this->sesion_id",
+            "sesion_fecha" => "$this->sesion_fecha",
+            "usuario_apellidos" => "$this->usuario_apellidos"
+        ];
+        return $values;
+    }
+    public function get_():void{}
+}
+```
 
 - [ ] _I – Interface Segregation Principle (ISP)_
 "Muchas interfaces específicas son mejores que una única más general."
