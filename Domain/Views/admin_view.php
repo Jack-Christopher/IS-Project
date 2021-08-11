@@ -113,9 +113,11 @@
                     echo "</td>";
 
                     echo "<td>";?>
-                    <a href="admin_view.php?id=<?php echo $current_event->idEvento; ?>" class="btn btn-danger">Eliminar</a>
+                    <a href="admin_view.php?id_evento=<?php echo $current_event->idEvento; ?>" class="btn btn-danger">Eliminar</a>
+                    <a href="evento_sesion_register_page.php?id_eventoo=<?php echo $current_event->idEvento; ?>" class="btn btn-success"> Agregar sesión </a>
+
                     <?php
-                    echo "</td>"; 
+                    echo "</td>";
                     echo "</tr>";
                 }
             ?>
