@@ -31,6 +31,7 @@ El usuario podrá visualizar un calendario, donde estarán publicadas las fechas
 - [ ] Registrarse como oyente en una reunión: Los usuarios tendrán la opción de registrarse en una evento cualquiera.
 - [ ] Actualización de Eventos: Las fechas en el calendario deben mostrarse de manera organizada y actualizada.
 
+
 ## Práctica de código legible aplicadas ⚙️
 
 - [ ] _1 - Comentar y Documentar_
@@ -382,6 +383,7 @@ class Conexion /*implements iConexion*/
  Como se puede apreciar en la imagen la estructura del proyecto sigue una arquitectura por capas
  ![Arquitectura](https://github.com/Jack-Christopher/IS-Project/arquitectura.png)
   
+  
 
 * LENGUAJE UBIQUO: 
   El lenguaje usado ha sido ubiquo en el sentido que ha sido un lenaguje común entre los programadores y los usuarios, esto es:
@@ -501,6 +503,7 @@ class Conexion implements iConexion
 La clase Conexion implementa la interfaz iConexion, lo que le permite definir una familia de comportamientos similares (en este caso se podrían crear clases que implementen la interfaz iConexion para obtener conexiones para SGBD distintas a MySQL y que sobreescriban los métodos de conexión para cada caso), poner cada uno de ellos en una clase separada y hacer que sus objetos sean intercambiables (poder usar cualquier conexión indistintamente de a que SGBD se intenten conectar), por lo que está abierta para extensiones (de otras SGBD) y cerrada para modificaciones (tienen los mismos métodos en todas la implementaciones).
 
 
+
 - [ ] _L – Liskov Substitution Principle (LSP)_
 "Cada clase que hereda de otra puede usarse como su padre sin necesidad de conocer las diferencias entre ellas."
 
@@ -520,6 +523,7 @@ interface IStatictics
     public function get_values();
     public function get_():void;
 }
+
 
 
 class Statictics implements IStatictics
@@ -567,6 +571,7 @@ class Statictics implements IStatictics
 - [ ] _I – Interface Segregation Principle (ISP)_
 "Muchas interfaces específicas son mejores que una única más general."
 Consiste en encapsular las funciones de las clases que requieren hacer consultas en la base de datos sobre información que será mostrada al usuario. Esto se realiza mediante getters en cada clases.
+
 
 ```
 <?php
