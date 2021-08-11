@@ -28,6 +28,7 @@
   </nav>
 
     <?php
+    // Read Database
         $conn = $connection->OpenConnection();
         if(isset($_GET['id']))
         {
@@ -91,6 +92,7 @@
         <tbody>
 
             <?php
+            // Imopresion de los datos estadisticos de los eventos
             
             while ($registro = mysqli_fetch_array($result1))
                 {
