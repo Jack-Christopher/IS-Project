@@ -1,6 +1,13 @@
 <?php
 
-class Statictics
+interface IStatictics
+{
+    public function __construct($result_array);
+    public function get_values();
+}
+
+
+class Statictics implements IStatictics
 {
 
     public  $nombre_archivo;
@@ -38,6 +45,6 @@ class Statictics
         ];
         return $values;
     }
-
+    
 }
 
