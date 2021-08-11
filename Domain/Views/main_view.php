@@ -6,6 +6,7 @@
     <?php
       include_once("../Services/include_important.php"); 
       require_once("../../Repositories/Classes/conexion.php");
+      include_once("../Models/Evento.php");
       include_once("../Models/Persona.php");
       $connection = new Conexion;
     ?>
@@ -36,10 +37,13 @@
     <?php
         $conn = $connection->OpenConnection();
         $id = $_SESSION["id"];
-        $query = "SELECT DISTINCT ev.id \"id_evento\" , ev.nombre \"nombre_evento\"
-                  FROM sesion S, sesion_usuario SU, Evento ev 
-                  WHERE (id_usuario = $id AND S.id = SU.id_sesion) AND ev.id = S.id_evento";
+        // $query = "SELECT DISTINCT ev.id \"id_evento\" , ev.nombre \"nombre_evento\"
+        //           FROM sesion S, sesion_usuario SU, Evento ev 
+        //           WHERE (id_usuario = $id AND S.id = SU.id_sesion) AND ev.id = S.id_evento";
         
+       
+        $query = "SELECT nombre, id, descripcion, pais
+                  FROM Evento";
         $query2 = "SELECT id, nombres, apellidos, correo_electronico, telefono FROM";
         
         if ($_SESSION["permisos"] == "admin")
@@ -62,9 +66,6 @@
     <h1 class="display-4">Bienvenido a tu Inicio, <?php echo $usuario->nombres;?></h1>
     <br><br>
 
-    <div class="container">
-    <a href="Autor_page.php" class="btn btn-success"> Agregar Autor</a>
-    </div>
     
     <table class="table table-striped">
         <thead>
@@ -75,28 +76,42 @@
         </thead>
         
         <tbody>
-
+        
             <?php
+                $ids = [];
+                        
                 while ($registro = mysqli_fetch_array($result))
                 {
                     echo "<tr>";
                     
-                        echo "<th scope=\"row\"> ";
-                            echo $registro["id_evento"];
-                        echo "</th>";
+                    $current_event = new Evento( $registro);
+                    $datos = $current_event->get_values();
+                    echo "<th scope=\"row\"> ";
+                        echo $registro["id"];
+                    echo "</th>";
 
-                        echo "<td>";
-                            echo $registro["nombre_evento"];
-                        echo "</td>";
+                    echo "<td>";
+                        echo $registro["nombre"];
+                    echo "</td>";
+                        
+
+                    echo "<td>";
+                    echo $registro['descripcion'];
+                    echo "</td>";
+
+                    echo "<td>";
+                    echo $registro['pais'];
+                    echo "</td>";
 
                         echo "<td>";
 
                             echo "<button type=\"button\" id=\"view_button\" 
-                            onclick= \"show_event(" . $registro["id_evento"] . ")\" 
+                            onclick= \"show_event(" . $registro["id"] . ")\" 
                             class=\"btn btn-primary\" > Ver  </button>";
                         echo "</td>";
 
                     echo "</tr>";
+                    array_push($ids,$registro["id"]);
                 }
 
             ?>
@@ -114,8 +129,15 @@
     </div>
     
     <br><br><br>
-
+                //PArte 2, edicion poroto
     <?php
+
+        foreach ($ids as $i) {
+            print($i);
+            print(" ");
+            # code...
+        }
+    
         $query = "SELECT S.id \"id_sesion\", ev.nombre \"nombre_evento\", S.fecha, TIME_FORMAT(S.hora, \"%h:%i %p\") \"hora\" 
                   FROM sesion S, sesion_usuario SU, Evento ev 
                   WHERE (SU.id_usuario = $id AND S.id = SU.id_sesion) AND ev.id = S.id_evento";
@@ -125,60 +147,6 @@
     ?>
 
     
-    <div class="container">
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th scope="col"> <h4> Número de Sesión </h4> </th>
-                <th scope="col"> <h4> Fecha de Sesión </h4> </th>
-                <th scope="col"> <h4> Hora de Sesión </h4> </th>
-                <th scope="col"> <h4> Nombre de Evento </h4> </th>
-            </tr>
-        </thead>
-        
-        <tbody>
-
-            <?php
-                while ($registro1 = mysqli_fetch_array($result1))
-                {
-                    echo "<tr>";
-                    
-                        echo "<th scope=\"row\"> ";
-                            echo $registro1["id_sesion"];
-                        echo "</th>";
-
-                        echo "<td>";
-                            echo $registro1["fecha"];
-                        echo "</td>";
-
-                        echo "<td>";
-                            echo $registro1["hora"];
-                        echo "</td>";
-
-                        echo "<td>";
-                            echo $registro1["nombre_evento"];
-                        echo "</td>";
-
-                        echo "<td>";
-                            echo "<button type=\"button\" id=\"view_button\" class=\"btn btn-warning\" > Abandonar </button>";
-                        echo "</td>"; 
-                        
-                    echo "</tr>";
-                }
-
-            ?>
-
-        </tbody>
-    </table>
-
-    <br><br>
-    <h4>Información de Contacto:</h4>
-    <br>
-    Correo Electrónico:  <?php echo $usuario->correoElectronico; ?>
-    <br>
-    Teléfono:  <?php echo $usuario->telefono; ?>
-    <br><br>
-    </div>
     
 
     </body>
