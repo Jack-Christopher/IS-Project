@@ -62,6 +62,9 @@
     <h1 class="display-4">Bienvenido a tu Inicio, <?php echo $usuario->nombres;?></h1>
     <br><br>
 
+    <div class="container">
+    <a href="Autor_page.php" class="btn btn-success"> Agregar Autor</a>
+    </div>
     
     <table class="table table-striped">
         <thead>
