@@ -91,7 +91,6 @@
                 header('Location: admin_view.php');
                 
             }
-            print_r($result1);
                 while ($registro = mysqli_fetch_array($result1))
                 {
                     echo "<tr>";
