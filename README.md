@@ -349,6 +349,9 @@ La clase Conexion implementa la interfaz iConexion, lo que le permite definir un
 
 
 - [ ] _L – Liskov Substitution Principle (LSP)_
+"Cada clase que hereda de otra puede usarse como su padre sin necesidad de conocer las diferencias entre ellas."
+
+
 - [ ] _I – Interface Segregation Principle (ISP)_
 - [ ] _D – Dependency Inversion Principle (DIP)_
 
