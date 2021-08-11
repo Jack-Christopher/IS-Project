@@ -62,7 +62,7 @@
             evento_sesion.id_evento = 4 AND
             sesion.id = evento_sesion.id_sesion
         LIMIT
-            50%";
+            3";
                 
         }
         $result1 = mysqli_query($conn, $query);
