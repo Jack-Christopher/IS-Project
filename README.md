@@ -402,6 +402,18 @@ Interface Segregation Principle, al usar varias clases que requieran obtener los
 "El problema cuando construimos software es que solemos hacer muchas dependencias y esto conlleva a un futuro que cambiar una pieza de nuestro código obliga a refactorizar todo el proyecto y esto no debería ser así."
 Este principio trata acerca de que los módulos de alto nivel no deben depender de los módulos de bajo nivel, ambos deberían depender de interfaces, es decir, se basa en la abstracción.
 
+```
+Autor.php
+Documento.php
+Evento.php
+Invitado.php
+Organizador.php
+Persona.php
+Sesion.php
+Statistics.php
+Usuario.php
+```
+Ninguno de nuestros modulos dependen entre si.
 ---
 
 ### COLABORADORES 🔩
