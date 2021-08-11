@@ -108,6 +108,8 @@ Guiones bajos: Guiones bajos entre palabras, tales como: mysql_real_escape_strin
 - [ ] _6 - Principio DRY_
 - [ ] _7 - Evite la Anidación Profunda_
 - [ ] _8 - Organización de Archivos y Carpetas_
+	La organización de las carpeta se realizó del siguiente modo:
+![image](https://github.com/Jack-Christopher/IS-Project/blob/main/Presentacion-Expo/carpetas.png)
 
 - [ ] _9 - Capitalizar Palabras Especiales de SQL_
 ```
