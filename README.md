@@ -34,7 +34,60 @@ El usuario podrá visualizar un calendario, donde estarán publicadas las fechas
 ## Práctica de código legible aplicadas ⚙️
 
 - [ ] _1 - Comentar y Documentar_
+	Se ha documentado el codigo en el RedMe del repositorio. Ademas, se ha comentado las funciones y clases con las que podrían haber confusiones 
+	```
+	// Se hacen las consultas para autenticar el inicio de sesion
+	$query1 = "SELECT id FROM Usuario WHERE nombre_de_usuario='$username' AND clave='$password'";
+	$query2 = "SELECT id FROM Organizador WHERE nombre_de_usuario='$username' AND clave='$password'";
+	
+	$result1=mysqli_query($conn, $query1);
+	$result2=mysqli_query($conn, $query2);
+
+	// Se verifica si la cuenta esta en la base de datos
+	if(mysqli_num_rows($result1) > 0)
+	{
+        	echo 0;
+        	while ($registro = mysqli_fetch_array($result1))
+        	{
+            		$id = $registro["id"];
+            		$_SESSION["id"] = "$id";
+        	}
+        	$_SESSION["permisos"] = "admin";
+	}
+	else if (mysqli_num_rows($result2) > 0)
+	{
+		echo 1;
+        	while ($registro = mysqli_fetch_array($result2))
+        	{
+            		$id = $registro["id"];
+            		$_SESSION["id"] = "$id";
+        	}
+        	$_SESSION["permisos"] = "user";
+    	}
+	```
+
 - [ ] _2 - Sangrado consistente_
+	Se ha aplicado sangría a todas los archivos.
+	Ejemplo del código:
+```
+class Documento
+{
+    public  $id;
+    public  $titulo;
+    public  $autor;
+    public  $numDescargas;
+
+    public function __construct($result_array)
+    {
+        $this->id = $result_array["id_sesion"];
+        $this->titulo = $result_array["fecha"];
+        $this->autor = $result_array["hora"];
+        $this->numDescargas = $result_array["nombre_evento"];
+    }
+}
+```
+	
+	
 - [ ] _3 - Evite Comentarios Obvios_
 - [ ] _4 - Agrupación de Código_
 - [ ] _5 - Esquema de Nomenclatura Consistente_
