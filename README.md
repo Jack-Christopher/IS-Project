@@ -90,6 +90,8 @@ class Documento
 	
 	
 - [ ] _3 - Evite Comentarios Obvios_
+	Solo se han usado comentarios necesarios para el entendimiento del programa.
+	
 - [ ] _4 - Agrupación de Código_
 - [ ] _5 - Esquema de Nomenclatura Consistente_
 ```
