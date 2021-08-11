@@ -48,6 +48,7 @@ function register_event()
                     if(data==0)
                     {
                         message = alertify.success("El registro se realizó exitosamente");
+			window.location = "admin_view.php";
                     }
                     else 
 		    {
