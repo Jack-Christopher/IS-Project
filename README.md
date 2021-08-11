@@ -61,7 +61,43 @@ Guiones bajos: Guiones bajos entre palabras, tales como: mysql_real_escape_strin
 
 → Constructivist: Este es un estilo de programación que hace que existan subfunciones con los parámetros de una función controladora, si alguna de las subfunciones falla, las demás fallan también. Este estilo es aplicado a la función formEsValido(), en el archivo login_page.php. Esta función, en Java Script, divide su trabajo en subfunciones, con los parámetros nombre_de_usuario y clave_de_usuario independientemente para verificar si son vacíos y enviarle un mensaje al usuario para que ingrese su nombre de usuario y contraseña. De esta forma el código para la función formEsValido() es mucho más entendible.
 
-→ Lazy Rivers: Este es un estilo de programación en el que el flujo de datos en una función en particular viene en "arroyos" y no agrupa todo de frente. En el caso de la función  register_event() es en donde se usa este estilo de programación, no está todo dentro de esta función, si no que acá se usa otro "arroyo" (función), esta función es la de formEsValido(), a su vez esta función mediante ajax llama a event_register, que no es una función, sin embargo actua como una, lo que hace es procesar los datos y verificar en la base de datos si estos son correctos. De esta forma el código es más entendible y no está todo agrupado en una sola función.
+→ Lazy Rivers: Este es un estilo de programación en el que el flujo de datos en una función en particular viene en "arroyos" y no agrupa todo de frente. En el caso de la función  register_event() es en donde se usa este estilo de programación, no está todo dentro de esta función, si no que acá se usa otro "arroyo" (función), esta función es la de formEsValido(), a su vez esta función mediante ajax llama a event_register, que no es una función, sin embargo actua como una, lo que hace es procesar los datos y añadirlos en la base de datos si estos son correctos. De esta forma el código es más entendible y no está todo agrupado en una sola función.
+También se usa este estilo para otra vista, la de editar evento.
+
+```
+function register_event()
+{ 
+    $("#submit_button")
+    {
+        if(formEsValido())              //Acá se llama a una función
+        {
+            cadena = $("#event_form").serialize();
+            alert(cadena);
+
+            $.ajax(
+            {
+                type: 'POST',
+                url: "../../Controller/event_register.php",     //Acá al insert/update de la BD
+                data: cadena,
+                success: function(data) 
+                {
+                    if(data==0)
+                    {
+                        message = alertify.success("El registro se realizó exitosamente");
+                    }
+                    else 
+					{
+						alertify.error("No se pudo registrar el evento.");
+                        window.location = "event_register_functions.php";
+					}
+                }
+                
+            })
+        }
+    }
+}
+```
+
 
 → Restful: Este es un estilo de programación muy usado en páginas web en donde se separa la interfaz del usuario con la parte del procesamiento de datos en el servidor, en el Login, se puede usó este estilo para trabajar de forma más cómoda, ya que en la parte de ejecutarInicioSesion() se trabaja con los datos recolectados a partir de la parte que ve el usuario.
 
