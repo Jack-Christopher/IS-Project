@@ -4,6 +4,7 @@
     <?php
       include_once("../Services/include_important.php"); 
       require_once("../../Repositories/Classes/conexion.php");
+      include_once("../Models/Sesion.php");
       $connection = new Conexion;
     ?>
   </head>
@@ -37,16 +38,93 @@
     ?>
 
     <div class="container">
-        <h1 class="display-4">Evento: <?php echo $evento->nombre ?> </h1>
-        <br><br>
-        <h1 class="display-5">Pais: <?php echo $evento->pais ?> </h1>
-        <br><br>
-        <h2 class="display-6">Descripción: <?php echo $evento->descripcion ?> </h2>
-        <br><br>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col"> 
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                      <th scope="col"> 
+                        <h1 class="display-4">Evento: <?php echo $evento->nombre ?> </h1>
+                      </th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                  <tr>
+                      <th scope="col"> 
+                        <h1 class="display-5">Pais: <?php echo $evento->pais ?> </h1>
+                      </th>
+                  </tr>
+                  <tr>
+                      <th scope="col"> 
+                          <h2 class="display-6">Descripción: <?php echo $evento->descripcion ?> </h2>
+                      </th>       
+                  </tr>
+                </tbody>
+            </table>
+            </th> 
 
-        
+            <th scope="col"> 
+              <img  src='../../Images/<?php echo $_GET['id'] ?>.jpg' style='width: 300px; height:auto;'> </img>
+            </th>
+          </tr>
+        </thead> 
+      </table> 
+
        
         <br>
+
+    
+        <div class="container">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+            <th scope="col"> <h4> ID de Sesion </h4> </th>
+                <th scope="col"> <h4> hora  </h4> </th>
+                <th scope="col"> <h4> fecha </h4> </th>
+                <th scope="col"> <h4> Descripcion  </h4> </th>                
+            </tr>
+        </thead>
+        
+        <tbody>
+
+            <?php
+            
+          $query = "SELECT id, fecha, hora, informacionExtra FROM sesion WHERE id_evento =". $_GET['id'].";";
+          $result2 = mysqli_query($conn, $query);
+          while ($registro = mysqli_fetch_array($result2))
+          {
+              echo "<tr>";
+              $current_event = new Sesion( $registro);
+              $datos = $current_event->get_values();
+              echo "<th scope=\"row\"> ";
+              echo $datos['id'];
+              echo "</th>";
+
+              echo "<td>";
+              echo $datos['hora'];
+              echo "</td>";
+
+              echo "<td>";
+              echo $datos['fecha'];
+              echo "</td>";
+
+              echo "<td>";
+              echo $datos['informacionExtra'];
+              echo "</td>";
+
+              echo "</tr>";
+          }
+          
+            ?>
+
+        </tbody>
+    </table>
+    </div>
+    <br><br>
+
         
     <div class="container">
 
