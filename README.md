@@ -449,9 +449,10 @@ En lenguaje más formal: si S es un subtipo de T, entonces los objetos de tipo T
 
 En Statistics.php clase usada para implementar la impresion de las estadisticas de cada evento podemos presenciar el uso de la implementacion de las clases madres sin necesidad de alterar las propiedades principales del programa
 
+```
 <?php
 
-```
+
 interface IStatictics
 {
     public function __construct($result_array);
@@ -545,6 +546,7 @@ class Sesion implements funcionalidad_get
 
 }
 ```
+
 Interface Segregation Principle, al usar varias clases que requieran obtener los datos para hacer las consultas de la BD, hacemos uso de una interfaz comun para las demas clases que tambien necesiten de hacer consultas.
 
 
