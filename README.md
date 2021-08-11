@@ -354,6 +354,7 @@ La clase Conexion implementa la interfaz iConexion, lo que le permite definir un
 
 - [ ] _I – Interface Segregation Principle (ISP)_
 "Muchas interfaces específicas son mejores que una única más general."
+Consiste en encapsular las funciones de las clases que requieren hacer consultas en la base de datos sobre información que será mostrada al usuario. Esto se realiza mediante getters en cada clases.
 
 ```
 <?php
@@ -399,6 +400,7 @@ Interface Segregation Principle, al usar varias clases que requieran obtener los
 
 - [ ] _D – Dependency Inversion Principle (DIP)_
 "El problema cuando construimos software es que solemos hacer muchas dependencias y esto conlleva a un futuro que cambiar una pieza de nuestro código obliga a refactorizar todo el proyecto y esto no debería ser así."
+Este principio trata acerca de que los módulos de alto nivel no deben depender de los módulos de bajo nivel, ambos deberían depender de interfaces, es decir, se basa en la abstracción.
 
 ---
 
