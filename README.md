@@ -9,6 +9,10 @@ El propósito es poder desarrollar plena y satisfactoriamente el software que ha
 
 Va dirigido a nosotros mismos, ya que seremos nosotros los usaremos dicho sistema , además a cualquier otra persona que esté interesada en la computación le podrá ser de utilidad para que pueda visualizar los eventos y que pueda tener un control sobre ellos.
 
+## ⚙️Diagrama de clases y casos de uso ⚙️
+
+![image](https://github.com/Jack-Christopher/IS-Project/blob/main/Presentacion-Expo/diagrama.gif)
+
 ## ⚙️Prototipo ⚙️
 
 ![image](https://github.com/Jack-Christopher/IS-Project/blob/main/Presentacion-Expo/prototipo.gif)
