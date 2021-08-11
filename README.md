@@ -353,6 +353,8 @@ La clase Conexion implementa la interfaz iConexion, lo que le permite definir un
 
 
 - [ ] _I – Interface Segregation Principle (ISP)_
+"Muchas interfaces específicas son mejores que una única más general."
+
 - [ ] _D – Dependency Inversion Principle (DIP)_
 
 
