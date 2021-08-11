@@ -98,6 +98,26 @@ class Documento
 	Solo se han usado comentarios necesarios para el entendimiento del programa.
 	
 - [ ] _4 - Agrupación de Código_
+
+Se agrupan los bloques de código que cumplen una propósito en conjunto:
+```
+	session_start();
+	require_once("../Repositories/Classes/Conexion.php");
+	$connection = new Conexion;
+	$conn = $connection->OpenConnection();
+
+	$username = $_POST["user_name"];
+	$password = $_POST["password"];
+	$_SESSION["username"] = "$username";
+    
+	$query1 = "SELECT id FROM Usuario WHERE nombre_de_usuario='$username' AND clave='$password'";
+	$query2 = "SELECT id FROM Organizador WHERE nombre_de_usuario='$username' AND clave='$password'";
+	$result1=mysqli_query($conn, $query1);
+	$result2=mysqli_query($conn, $query2);
+
+```
+
+
 - [ ] _5 - Esquema de Nomenclatura Consistente_
 ```
 El mismo PHP es a veces culpable de no seguir esquemas de nomenclatura consistentes:
