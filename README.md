@@ -111,6 +111,36 @@ Guiones bajos: Guiones bajos entre palabras, tales como: mysql_real_escape_strin
 ```
 
 - [ ] _6 - Principio DRY_
+
+	(Don't repeat yourself)
+	No se produce la repetición de codigo en ninguna pare del proyecto.
+	Por ejemplo en la Base de Datos, no es repetida ninguna pieza de información, cada tabla contiene información única sin duplicados :
+```
+CREATE TABLE Evento(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(30),
+    id_categoria INT,
+    descripcion VARCHAR (50),
+    pais VARCHAR(20),
+    cantidad_asistentes INT,
+    FOREIGN KEY (id_categoria) REFERENCES Categoria(id)
+);
+CREATE TABLE Sesion(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    hora TIME,
+    fecha DATE,
+    informacionExtra VARCHAR(30),
+    id_evento INT,
+    FOREIGN KEY (id_evento) REFERENCES Evento(id)
+);
+CREATE TABLE Documento(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    titulo VARCHAR(30),
+    nombre_archivo VARCHAR(75), 
+    cantidad_descargas INT
+);
+```
+
 - [ ] _7 - Evite la Anidación Profunda_
 
 	Las anidaciones profundas son evitadas lo más que sea posible.
