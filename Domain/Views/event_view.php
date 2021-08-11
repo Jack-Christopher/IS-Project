@@ -67,7 +67,7 @@
             </th> 
 
             <th scope="col"> 
-              <img  src='../../Images/<?php echo $_GET['id'] ?>.jpg' style='width: 300px; height:auto;'> </img>
+              <img  src='../../Domain/Views/Images/EventImages/<?php echo $_GET['id'] ?>.jpg' style='width: 300px; height:auto;'> </img>
             </th>
           </tr>
         </thead> 
