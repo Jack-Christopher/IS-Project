@@ -11,10 +11,10 @@ class Sesion
 
     public function __construct($result_array)
     {
-        $this->id = $result_array["id_sesion"];
+        $this->id = $result_array["id"];
         $this->fecha = $result_array["fecha"];
         $this->hora = $result_array["hora"];
-        $this->Evento = $result_array["nombre_evento"];
+        $this->Evento = $result_array["informacionExtra"];
     }
 
     public function get_values()
@@ -23,7 +23,7 @@ class Sesion
             "id" => "$this->id",
             "fecha" => "$this->fecha",
             "hora" => "$this->hora",
-            "nombre_evento" => "$this->Evento",
+            "informacionExtra" => "$this->Evento",
         ];
         return $values;
     }
