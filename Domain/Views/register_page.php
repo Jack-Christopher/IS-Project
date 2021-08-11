@@ -101,6 +101,32 @@
         return true;
     }
 
+/// 
+/// Funcion dnetor del cookbook para mostrar un mensaje de redireccionamiento
+///
+function RedirectMessage()
+{
+    alertify.success("El registro se realizó exitosamente");
+}
+
+/// 
+/// Funcion para redireccionar a una pagina(login). 
+///
+
+function setLocation($window,$new_location)
+{
+    window.location=$new_location;
+}
+
+function Redirect()
+{
+    setTimeout(setLocation, 2000,window,"main_view.php");
+
+}
+/// 
+/// Funcion principal del register
+///
+
     $(document).ready( function() 
     { 
         $("#submit_button").click( function() 
@@ -108,34 +134,27 @@
             if(formEsValido())
             {
                 cadena = $("#signup_form").serialize();
-
                 $.ajax(
                 {
                     type: 'POST',
                     url: "../../Controller/register.php",
                     data: cadena,
+
                     success: function(data) 
                     {
+                        
                         if(data==0)
                         {
-                            /*alertify.set('notifier','position', 'top-center');*/
-                            message = alertify.success("El registro se realizó exitosamente");
-                            
-                            window.setTimeout(function()
-                            {
-                                message = alertify.success("Redirigiendo a la página principal ...");
-                            } , 3000);
-
-                            window.setTimeout(function()
-                            {
-                                window.location="main_view.php";
-                            } , 6000);
-                            
+                            ///
+                            /// Uso del Cookbook para el redireccionamiento
+                            ///
+                            RedirectMessage()
+                            Redirect()
                         }
                         else 
-						{
-							alertify.error("No se pudo registrar sus usuario.")
-						}
+                        {
+                            alertify.error("No se pudo registrar sus usuario.")
+                        }
                     }
                     
                 })
@@ -143,4 +162,5 @@
             
         })
     })
+
 </script>
