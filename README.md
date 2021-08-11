@@ -200,9 +200,6 @@ CREATE TABLE Documento(
 
 ## ⚙️Estilos de Programación aplicados ⚙️
 
-- [ ] DOMAIN:
-
-→ Constructivist: Este es un estilo de programación que hace que existan subfunciones con los parámetros de una función controladora, si alguna de las subfunciones falla, las demás fallan también. Este estilo es aplicado a la función formEsValido(), en el archivo login_page.php. Esta función, en Java Script, divide su trabajo en subfunciones, con los parámetros nombre_de_usuario y clave_de_usuario independientemente para verificar si son vacíos y enviarle un mensaje al usuario para que ingrese su nombre de usuario y contraseña. De esta forma el código para la función formEsValido() es mucho más entendible.
 
 → Lazy Rivers: Este es un estilo de programación en el que el flujo de datos en una función en particular viene en "arroyos" y no agrupa todo de frente. En el caso de la función  register_event() es en donde se usa este estilo de programación, no está todo dentro de esta función, si no que acá se usa otro "arroyo" (función), esta función es la de formEsValido(), a su vez esta función mediante ajax llama a event_register, que no es una función, sin embargo actua como una, lo que hace es procesar los datos y añadirlos en la base de datos si estos son correctos. De esta forma el código es más entendible y no está todo agrupado en una sola función.
 También se usa este estilo para otra vista, la de editar evento.
@@ -252,8 +249,6 @@ Y las funcionalidades del servidor están en
 ../Controller
 
 ```
-
-- [ ] REGISTER (Sesion, evento y usuario):
 
 → Cookbook: Es un estilo de programacion sin entradas ni salidas, orientados a procedimientos en forma de una secuencia para resolver un problema. Al terminar de manera correcta un registro, el redireccionamiento no necesita de entradas ni salidas, por lo que es una simple secuencia de procedimientos para notificar al usuario y redireccionarlo a una pagina de inicio de sesion.
 
@@ -312,11 +307,6 @@ $.ajax(
 ```
 
 
-→ Restful: Este es un estilo de programación muy usado en páginas web en donde se separa la interfaz del usuario con la parte del procesamiento de datos en el servidor, en el Register, se usó este estilo para trabajar de forma más cómoda, ya que al registar necesitamos recolectar la informacion del usuario.
-- [ ] MAIN VIEW:
-- [ ] ADMIN VIEW:
-
-
 → Kick forward: Variación del estilo de la fábrica de dulces, con las siguientes limitaciones adicionales:(main_view.php)_
 
 * _Cada función toma un parámetro adicional, generalmente el último, que es otra función_
@@ -326,10 +316,6 @@ $.ajax(
 * _Esto nos permite optimizar el codigo evitando funciones innecesarias y ademas de la escalabilidad a la hora de usar muchas funciones en el codigo_
 * _Este estilo nos permite optimizar el codigo evitando funciones innecesarias y ademas de la escalabilidad a la hora de usar muchas funciones en el codigo_
 
-- [ ] CONTROLLER :
-
-
-- [ ] REPOSITORIES :
 
 ## ⚙️Conceptos DDD aplicados ⚙️
 
