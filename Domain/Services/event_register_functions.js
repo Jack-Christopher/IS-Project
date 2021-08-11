@@ -50,10 +50,10 @@ function register_event()
                         message = alertify.success("El registro se realizó exitosamente");
                     }
                     else 
-					{
-						alertify.error("No se pudo registrar el evento.");
-                        window.location = "edit_event.php";
-					}
+		    {
+			alertify.error("No se pudo registrar el evento.");
+                        window.location = "event_register_page.php";
+		    }
                 }
                 
             })
