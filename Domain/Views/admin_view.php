@@ -91,6 +91,7 @@
                 header('Location: admin_view.php');
                 
             }
+            print_r($result1);
                 while ($registro = mysqli_fetch_array($result1))
                 {
                     echo "<tr>";
@@ -113,12 +114,11 @@
                     echo "</td>";
 
                     echo "<td>";?>
-                    <a href="admin_view.php?id_evento=<?php echo $current_event->idEvento; ?>" class="btn btn-danger">Eliminar</a>
+                    <a href="admin_view.php?id=<?php echo $current_event->idEvento; ?>" class="btn btn-danger">Eliminar</a>
                     <a href="edit_event.php?id=<?php echo $current_event->idEvento; ?>" class="btn btn-secondary">Editar</a>
                     <a href="evento_sesion_register_page.php?id_eventoo=<?php echo $current_event->idEvento; ?>" class="btn btn-success"> Agregar sesión </a>
-                
                     <?php
-                    echo "</td>";
+                    echo "</td>"; 
                     echo "</tr>";
                 }
             ?>
