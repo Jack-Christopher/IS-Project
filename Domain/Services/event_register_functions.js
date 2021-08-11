@@ -31,7 +31,7 @@ function formEsValido()
 
 function register_event()
 { 
-    $("#submit_button").click( function() 
+    $("#submit_button")
     {
         if(formEsValido())
         {
@@ -52,11 +52,11 @@ function register_event()
                     else 
 					{
 						alertify.error("No se pudo registrar el evento.");
-                        window.location = "event_register_page.php";
+                        window.location = "edit_event.php";
 					}
                 }
                 
             })
         }
-    })
+    }
 }
