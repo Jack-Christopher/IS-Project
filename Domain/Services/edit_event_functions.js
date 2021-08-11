@@ -47,10 +47,11 @@ function editt_event()
                 {
                     if(data==0)
                     {
-                        message = alertify.success("La edición del evento se realizó exitosamente");
+                        message = alertify.success("El evento se editó exitosamente");
                     }
                     else 
                     {
+                        alertify.error("No se pudo editar el evento.");
                         window.location = "admin_view.php";
                     }
                 }
