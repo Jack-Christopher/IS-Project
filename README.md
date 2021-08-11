@@ -72,6 +72,59 @@ Guiones bajos: Guiones bajos entre palabras, tales como: mysql_real_escape_strin
 
 → Cookbook: Es un estilo de programacion sin entradas ni salidas, orientados a procedimientos en forma de una secuencia para resolver un problema. Al terminar de manera correcta un registro, el redireccionamiento no necesita de entradas ni salidas, por lo que es una simple secuencia de procedimientos para notificar al usuario y redireccionarlo a una pagina de inicio de sesion.
 
+Funciones en estilo cookbock.
+
+```
+/// 
+/// Funcion dnetor del cookbook para mostrar un mensaje de redireccionamiento
+///
+function RedirectMessage()
+{
+    alertify.success("El registro se realizó exitosamente");
+}
+
+/// 
+/// Funcion para redireccionar a una pagina(login). 
+///
+
+function setLocation($window,$new_location)
+{
+    window.location=$new_location;
+}
+
+function Redirect()
+{
+    setTimeout(setLocation, 2000,window,"main_view.php");
+
+}
+```
+Uso dentro de un ajax
+```
+$.ajax(
+{
+    type: 'POST',
+    url: "../../Controller/register.php",
+    data: cadena,
+
+    success: function(data) 
+    {
+
+        if(data==0)
+        {
+            ///
+            /// Uso del Cookbook para el redireccionamiento
+            ///
+            RedirectMessage()
+            Redirect()
+        }
+        else 
+        {
+            alertify.error("No se pudo registrar sus usuario.")
+        }
+    }
+
+})
+```
 → Arrays:  Es un estilo de programacion centrado en el uso de los arrays para la resolucion de un problema. Al realizar un registro, es necesario guardar la informacion del usuario para ser enviado mediante AJAX y requiere un procedimiento especial para manejarlo.
 
 → Restful: Este es un estilo de programación muy usado en páginas web en donde se separa la interfaz del usuario con la parte del procesamiento de datos en el servidor, en el Register, se usó este estilo para trabajar de forma más cómoda, ya que al registar necesitamos recolectar la informacion del usuario.
