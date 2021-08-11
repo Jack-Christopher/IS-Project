@@ -1,4 +1,4 @@
-:shipit: # INGENIERÍA DE SOFTWARE I -- PROYECTO FINAL :shipit:
+ # :shipit: INGENIERÍA DE SOFTWARE I -- PROYECTO FINAL :shipit:
 
 _Presentacion del proyecto final de Ingenieria de Software de los alumnos de la Universidad Nacional de San Agustin_
 
