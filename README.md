@@ -105,8 +105,16 @@ Guiones bajos: Guiones bajos entre palabras, tales como: mysql_real_escape_strin
 - [ ] _6 - Principio DRY_
 - [ ] _7 - Evite la Anidación Profunda_
 - [ ] _8 - Organización de Archivos y Carpetas_
+
 - [ ] _9 - Capitalizar Palabras Especiales de SQL_
-**resaltar**
+```
+	$query = "INSERT INTO  usuario (nombres, apellidos, correo_electronico, nombre_de_usuario, clave, telefono) VALUES ('$name', '$last_name', '$e_mail', '$username', '$password', '$cellphone');";
+	$result = mysqli_query($conn, $query);
+    
+	$last_id_query = "SELECT MAX(id) FROM Usuario;";
+	$result = mysqli_query($conn, $last_id_query);
+```
+
 
 ## Estilos de Programación aplicados ⚙️
 
