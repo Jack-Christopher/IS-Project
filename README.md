@@ -112,6 +112,26 @@ Guiones bajos: Guiones bajos entre palabras, tales como: mysql_real_escape_strin
 
 - [ ] _6 - Principio DRY_
 - [ ] _7 - Evite la Anidación Profunda_
+
+	Las anidaciones profundas son evitadas lo más que sea posible.
+	Ejemplo en el Código (Anidación Simple): 
+	
+```
+	$conn = $connection->OpenConnection();
+        $query = "SELECT nombre, id, descripcion, pais
+                  FROM Evento";
+        $query2 = "SELECT id, nombres, apellidos, correo_electronico, telefono FROM";
+        
+        if ($_SESSION["permisos"] == "admin")
+        {
+            $query2 = $query2 . " Organizador";
+        }
+        else
+        {
+            $query2 = $query2 . " Usuario";
+        }
+```
+
 - [ ] _8 - Organización de Archivos y Carpetas_
 
 	La organización de las carpeta se realizó del siguiente modo:
