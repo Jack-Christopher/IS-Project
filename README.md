@@ -3,21 +3,21 @@
 _Presentacion del proyecto final de Ingenieria de Software de los alumnos de la Universidad Nacional de San Agustin_
 
 
-## Propósito del proyecto ⚙️
+## ⚙️Propósito del proyecto ⚙️
 
 El propósito es poder desarrollar plena y satisfactoriamente el software que ha sido elegido “Sistema de Publicación de Eventos Relacionados a Computación”, y llevarlo a cabo sin alguna complicación significativa, aplicando los conocimientos y técnicas aprendidos a lo largo del curso de Ingeniería de Software 1, que van desde realizar documentos de descripción de requisitos y acerca de la arquitectura de nuestro software, hasta aplicar estilos de programación a la implementación de este sistema.
 
 Va dirigido a nosotros mismos, ya que seremos nosotros los usaremos dicho sistema , además a cualquier otra persona que esté interesada en la computación le podrá ser de utilidad para que pueda visualizar los eventos y que pueda tener un control sobre ellos.
 
-## Prototipo ⚙️
+## ⚙️Prototipo ⚙️
 
 ![image](https://github.com/Jack-Christopher/IS-Project/blob/main/Presentacion-Expo/prototipo.gif)
 
-## Implementando ⚙️
+## ⚙️Implementando ⚙️
 
 ![image](https://github.com/Jack-Christopher/IS-Project/blob/main/Presentacion-Expo/implementacion.gif)
 
-## Funcionalidades ⚙️
+## ⚙️Funcionalidades ⚙️
 - [ ] Registrar Usuario: Esta es una funcionalidad mediante la cual un usuario puede ser registrado en el sistema de forma fácil y rápida
 - [ ] Mostrar Participantes: Tanto el usuario como el administrador pueden visualizar quienes van a participar de cierto evento.
 - [ ] Visualización de fechas importantes: Las fechas importantes son: conferencias, debates, simposios y cualquier otro tipo de evento que sea relacionado a Ciencias de la Computación.
@@ -32,7 +32,7 @@ El usuario podrá visualizar un calendario, donde estarán publicadas las fechas
 - [ ] Actualización de Eventos: Las fechas en el calendario deben mostrarse de manera organizada y actualizada.
 
 
-## Práctica de código legible aplicadas ⚙️
+## ⚙️Práctica de código legible aplicadas ⚙️
 
 - [ ] _1 - Comentar y Documentar_
 	Se ha documentado el codigo en el RedMe del repositorio. Ademas, se ha comentado las funciones y clases con las que podrían haber confusiones 
@@ -119,7 +119,7 @@ Guiones bajos: Guiones bajos entre palabras, tales como: mysql_real_escape_strin
 ```
 
 
-## Estilos de Programación aplicados ⚙️
+## ⚙️Estilos de Programación aplicados ⚙️
 
 - [ ] DOMAIN:
 
@@ -244,7 +244,7 @@ $.ajax(
 
 - [ ] REPOSITORIES :
 
-## Conceptos DDD aplicados ⚙️
+## ⚙️Conceptos DDD aplicados ⚙️
 
 * SERVICIOS:
   - Servicio de Dominio: 
@@ -418,7 +418,7 @@ echo "</th>";
 
 
 
-## Principios SOLID aplicados ⚙️
+## ⚙️Principios SOLID aplicados ⚙️
 - [ ] _S – Single Responsibility Principle (SRP)_
   “Una clase debe tener una sola razón para cambiar”, es decir, debe tener una sola responsabilidad.
   Este principio se ocupa específicamente de la cohesión.  La cohesión se define como la afinidad funcional de los elementos de un módulo.
@@ -636,7 +636,7 @@ Usuario.php
 Ninguno de nuestros modulos dependen entre si.
 ---
 
-### COLABORADORES 🔩
+### 🔩COLABORADORES 🔩
 
 - [x] Jack Christopher Huaihua Huayhua
 - [x] Elizabeth Huanca Parqui
